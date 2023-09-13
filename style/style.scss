@@ -1,44 +1,101 @@
-/* font a changer bien evidement*/
+/* var */
+$main-color: #00539C;
+$bg-color: #FBEAEB;
+
+/* mixin */
+@mixin flex-mixin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* scss */
 html{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
+    font-family: "Times New Roman";
+    color: $main-color;
+    background-color: $bg-color;
     line-height: 1.1;
-}
+    body{
+        margin: 1em;
+        border: 2px solid black;
+        nav{
+            padding: 1.5rem 0 1rem;
+            @include flex-mixin;
+            flex-basis: 100%;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            opacity: 80%;
+            .title{
+                @include flex-mixin;
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex-basis: 30%;
+                padding: 0.5em;
+                a{
+                    padding: 1em;
+                    font-size: 1.5em;
+                }
+            }
+            .navbar{
+                @include flex-mixin;
+                flex-direction: row;
+                flex-basis: 30%;
+                padding: 1em;
+                .navbar__a{
+                    @include flex-mixin;
+                    padding: 1em;
+                    flex-basis: 100%;
+                    margin: 5px;
+                    border: solid 1px black;
+                    border-radius: 10px;
+                    transition: transform 200ms ease-in-out, border-radius 150ms ease-in-out;
+                    &:hover{
+                        transform: translateY(5px);
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .container{
+            @include flex-mixin;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 1em;
+            .primary-container{
+                flex-basis: 50%;
+                h1{
+                    font-size: 5em;
+                    text-shadow: 5px 5px 5px $main-color;
+                    font-weight:lighter;
+                    margin: 0px;
+                }
+                h2{
+                    font-size: 3em;
+                    font-weight:lighter;
+                    border-bottom: 1px solid $main-color;
+                    margin: 0px;
+                }
+                .container__item{
+                    @include flex-mixin;
 
-nav{
-    padding: 1.5rem 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    position: relative;
-    a{
-        color: black;
+                }
+            }
+            .secondary-container{
+                @include flex-mixin;
+                img{
+                    border-radius: 300px;
+                }
+            }
+        }
+        footer{
+            padding: 1em;
+            background-color: grey;
+            flex-basis: 100%;
+        }
     }
 }
 
-.title{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-basis: 25%;
-    padding: 0.5em;
-    align-items: center;
-    a{
-        font-size: 1.5em;
-    }
-}
-
-.navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-basis: 25%;
-    padding: 0.5em;
-}
 
 li{
     list-style-type: none;
@@ -46,24 +103,13 @@ li{
 
 a{
     text-decoration: none;
-    &:hover{
-    }
+    font-weight: bold;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0px;
-    & > div{
-        flex-basis: 40%;
-    }
-}
 
-footer{
-    padding: 5em;
-    background-color: grey;
-    flex-basis: 100%;
-}
+
+
+
+
+
+
