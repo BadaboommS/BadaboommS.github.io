@@ -1,0 +1,69 @@
+/* font a changer bien evidement*/
+html{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    line-height: 1.1;
+}
+
+nav{
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    position: relative;
+    a{
+        color: black;
+    }
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 25%;
+    padding: 0.5em;
+    align-items: center;
+    a{
+        font-size: 1.5em;
+    }
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 25%;
+    padding: 0.5em;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+    & > div{
+        flex-basis: 40%;
+    }
+}
+
+footer{
+    padding: 5em;
+    background-color: grey;
+    flex-basis: 100%;
+}
