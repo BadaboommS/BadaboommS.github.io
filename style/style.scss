@@ -16,75 +16,98 @@ html{
     background-color: $bg-color;
     line-height: 1.1;
     body{
-        margin: 1em;
-        border: 2px solid black;
-        nav{
-            padding: 1.5rem 0 1rem;
-            @include flex-mixin;
-            flex-basis: 100%;
-            justify-content: space-between;
-            border-bottom: 1px solid black;
-            opacity: 80%;
-            .title{
-                @include flex-mixin;
-                flex-direction: row;
-                flex-wrap: wrap;
-                flex-basis: 30%;
-                padding: 0.5em;
-                a{
-                    padding: 1em;
-                    font-size: 1.5em;
-                }
-            }
-            .navbar{
-                @include flex-mixin;
-                flex-direction: row;
-                flex-basis: 30%;
-                padding: 1em;
-                .navbar__a{
+        margin: 0px;
+        width: 100%;
+        header{
+            display: block;
+            position: fixed;
+            height: 5em;
+            width: 100%;
+            margin: auto;
+            background-color: $bg-color;
+            color: $main-color;
+            top: 0;
+            opacity: 100%;
+            nav{
+                display: block;
+                @media screen and (min-width: 40em){
                     @include flex-mixin;
-                    padding: 1em;
-                    flex-basis: 100%;
-                    margin: 5px;
-                    border: solid 1px black;
-                    border-radius: 10px;
-                    transition: transform 200ms ease-in-out, border-radius 150ms ease-in-out;
-                    &:hover{
-                        transform: translateY(5px);
-                        border-radius: 5px;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+                height: 100%;
+                width: 100%;
+                border: 1px solid black;
+                .title{
+                    font-size: 2em;
+                    text-align: center;
+                    @media screen and (min-width: 40em){
+                        margin-left: 20px;
+                    }
+                }
+                .navbar{
+                    @include flex-mixin;
+                    flex-basis: 25%;
+                    justify-content: space-around;
+                    margin: auto;
+                    @media screen and (min-width: 40em){
+                        margin-right: 20px;
+                    }
+                    a{
+                        min-width: 100px;
+                        padding: 10px;
                     }
                 }
             }
         }
-        .container{
-            @include flex-mixin;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 1em;
-            .primary-container{
-                flex-basis: 50%;
-                h1{
-                    font-size: 5em;
-                    text-shadow: 5px 5px 5px $main-color;
-                    font-weight:lighter;
-                    margin: 0px;
-                }
-                h2{
-                    font-size: 3em;
-                    font-weight:lighter;
-                    border-bottom: 1px solid $main-color;
-                    margin: 0px;
-                }
-                .container__item{
+        #scroller{
+            #one{
+                margin-top: 5em;
+                .container{
                     @include flex-mixin;
-
-                }
-            }
-            .secondary-container{
-                @include flex-mixin;
-                img{
-                    border-radius: 300px;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    height: 50%;
+                    width: 100%;
+                    gap: 20px;
+                    padding: 1em;
+                    .primary-container{
+                        flex-basis: 50%;
+                        text-align:center;
+                        h1{
+                            font-size: 5em;
+                            text-shadow: 5px 5px 3px $main-color;
+                            -webkit-text-stroke: 1px black;
+                            font-weight:lighter;
+                            margin: 0px;
+                        }
+                        h2{
+                            font-size: 3em;
+                            font-weight:lighter;
+                            border-bottom: 1px solid $main-color;
+                            margin: 0px;
+                            padding-bottom: 5px;
+                        }
+                        p{
+                            margin-top: 5px;
+                            margin-bottom: 0px;
+                            font-size: 1.5em;
+                        }
+                        .container__item{
+                            @include flex-mixin;
+        
+                        }
+                    }
+                    .secondary-container{
+                        img{
+                            @media screen and (max-width: 40em){
+                                max-width: 300px;
+                                max-height: 300px;
+                            } 
+                            border-radius: 300px;
+                        }
+                    }
                 }
             }
         }

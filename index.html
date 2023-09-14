@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/scroller.css">
         <script src="script/main.js"></script>
         <title>Yann Lindeboom 👍</title>
     </head>
@@ -11,25 +12,41 @@
         <header>
             <nav id="main-navigation">
                 <div class="title">
-                    <a href="index.hml">Yann Lindeboom</a>
-                    <span>Développeur Front End</span>
+                    <a href="#one">Yann Lindeboom</a>
                 </div>
-                <ul class="navbar">
-                    <a href="about.html" class="navbar__a">Qui suis-je?</a>
-                    <a href="experience.html" class="navbar__a">Experience</a>
-                    <a href="contact.html" class="navbar__a">Contact</a>
-                </ul>
+                <div class="navbar">
+                    <a href="#two" class="navbar__a">Qui suis-je?</a><p>|</p>
+                    <a href="#three" class="navbar__a">Experience</a><p>|</p>
+                    <a href="#four" class="navbar__a">Contact</a>
+                </div>
             </nav>
         </header>
-        <div class="container">
-            <div class="primary-container">
-                <h1 class="container__item">Yann Lindeboom</h1>
-                <h2 class="container__item">Developpeur Front End</h2>
-                <p class="container__item">Arrivé à bon port ou simplement perdu sur Internet? Quoi qu'il en soit, bienvenu sur mon site!</p>
-            </div>
-            <div class="secondary-container">
-                <img src="img/IMG_2404.jpg" alt="photo" class="container__item" style="width: 500px; height:500px;"/>
-            </div>
+        <div id="scroller">
+            <section id="one">
+                <div class="container">
+                    <div class="primary-container">
+                        <h1 class="container__item">Yann Lindeboom</h1>
+                        <h2 class="container__item">Developpeur Front End</h2>
+                        <p class="container__item">Arrivé à bon port ou simplement perdu sur Internet?</p>
+                        <p class="container__item">Quoi qu'il en soit, je vous souhaite la bienvenue !</p>
+                    </div>
+                    <div class="secondary-container">
+                        <img src="img/IMG_2404.jpg" alt="photo" class="container__item" style="width: 500px; height:500px;"/>
+                    </div>
+                </div>
+            </section>
+            <section id="two">
+                <h2>About me</h2>
+                <p>Test</p>
+            </section>
+            <section id="three">
+                <h2>Experience</h2>
+                <p>Test</p>
+            </section>
+            <section id="four">
+                <h2>Contact form</h2>
+                <p>Test</p>
+            </section>
         </div>
         <footer>
             <div>
