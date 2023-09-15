@@ -13,8 +13,7 @@ html li {
 html a {
   text-decoration: none;
   font-weight: bold;
-  color: white;
-  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  background: linear-gradient(to right, #437CCD, #45D6CA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -115,11 +114,12 @@ html body #scroller #one .container {
 html body #scroller #one .container .primary-container {
   flex-basis: 50%;
   text-align: center;
+  background: linear-gradient(to right, #437CCD, #45D6CA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 html body #scroller #one .container .primary-container h1 {
   font-size: 2em;
-  text-shadow: 5px 5px 3px black;
-  -webkit-text-stroke: 1px grey;
   font-weight: lighter;
   margin: 0px;
 }
@@ -171,6 +171,24 @@ html body #scroller #three {
 }
 html body #scroller #four {
   background-color: grey;
+}
+html body #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+html body #myBtn:hover {
+  background-color: #555;
 }
 html body footer {
   display: none;
