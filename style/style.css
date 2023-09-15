@@ -3,30 +3,58 @@
 /* scss */
 html {
   font-family: "Times New Roman";
-  color: #00539C;
-  background-color: #FBEAEB;
+  color: black;
+  background-color: white;
   line-height: 1.1;
+}
+html li {
+  list-style-type: none;
+}
+html a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html a:visited {
+  color: white;
 }
 html body {
   margin: 0px;
   width: 100%;
 }
+html body .mobile__top {
+  display: none;
+}
+@media screen and (max-width: 40em) {
+  html body .mobile__top {
+    display: block;
+    background-color: black;
+    height: 5vh;
+    width: 100%;
+  }
+}
 html body header {
   display: block;
   position: fixed;
   height: 5em;
-  width: 100%;
-  margin: auto;
-  background-color: #FBEAEB;
-  color: #00539C;
+  width: 100vw;
+  background-color: black;
+  color: white;
   top: 0;
   opacity: 100%;
+}
+@media screen and (max-width: 40em) {
+  html body header {
+    display: none;
+  }
 }
 html body header nav {
   display: block;
   height: 100%;
   width: 100%;
-  border: 1px solid black;
 }
 @media screen and (min-width: 40em) {
   html body header nav {
@@ -50,8 +78,8 @@ html body header nav .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 25%;
   justify-content: space-around;
+  text-align: center;
   margin: auto;
 }
 @media screen and (min-width: 40em) {
@@ -60,74 +88,100 @@ html body header nav .navbar {
   }
 }
 html body header nav .navbar a {
+  font-size: 1.2em;
   min-width: 100px;
   padding: 10px;
 }
-html body #scroller #one {
-  margin-top: 5em;
+@media screen and (min-width: 40em) {
+  html body #scroller #one {
+    margin-top: 5em;
+  }
 }
 html body #scroller #one .container {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  height: 50%;
-  width: 100%;
-  gap: 20px;
-  padding: 1em;
+}
+@media screen and (min-width: 40em) {
+  html body #scroller #one .container {
+    margin-top: 20px;
+    gap: 20px;
+  }
 }
 html body #scroller #one .container .primary-container {
   flex-basis: 50%;
   text-align: center;
 }
 html body #scroller #one .container .primary-container h1 {
-  font-size: 5em;
-  text-shadow: 5px 5px 3px #00539C;
-  -webkit-text-stroke: 1px black;
+  font-size: 2em;
+  text-shadow: 5px 5px 3px black;
+  -webkit-text-stroke: 1px grey;
   font-weight: lighter;
   margin: 0px;
 }
+@media screen and (min-width: 40em) {
+  html body #scroller #one .container .primary-container h1 {
+    font-size: 5em;
+  }
+}
 html body #scroller #one .container .primary-container h2 {
-  font-size: 3em;
+  font-size: 1.5em;
   font-weight: lighter;
-  border-bottom: 1px solid #00539C;
+  border-bottom: 1px solid black;
   margin: 0px;
   padding-bottom: 5px;
 }
-html body #scroller #one .container .primary-container p {
-  margin-top: 5px;
-  margin-bottom: 0px;
-  font-size: 1.5em;
+@media screen and (min-width: 40em) {
+  html body #scroller #one .container .primary-container h2 {
+    font-size: 3em;
+  }
+}
+@media screen and (min-width: 40em) {
+  html body #scroller #one .container .primary-container p {
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
 }
 html body #scroller #one .container .primary-container .container__item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-html body #scroller #one .container .secondary-container img {
+html body #scroller #one .container img {
+  max-width: 500px;
+  min-width: 300px;
+  height: auto;
   border-radius: 300px;
 }
-@media screen and (max-width: 40em) {
-  html body #scroller #one .container .secondary-container img {
-    max-width: 300px;
-    max-height: 300px;
+@media screen and (max-width: 1024px) {
+  html body #scroller #one .container img {
+    max-width: 350px;
   }
 }
-html body footer {
-  padding: 1em;
+html body #scroller #two {
   background-color: grey;
-  flex-basis: 100%;
 }
-
-li {
-  list-style-type: none;
+html body #scroller #three {
+  background-color: white;
 }
-
-a {
-  text-decoration: none;
-  font-weight: bold;
+html body #scroller #four {
+  background-color: grey;
+}
+html body footer {
+  display: none;
+}
+@media screen and (max-width: 40em) {
+  html body footer {
+    display: block;
+    background-color: black;
+    height: 5vh;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
