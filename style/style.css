@@ -1,199 +1,240 @@
-/* var */
-/* mixin */
-/* scss */
-html {
-  font-family: "Times New Roman";
-  color: black;
-  background-color: white;
-  line-height: 1.1;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap");
+.canSelect {
+  -webkit-touch-callout: all; /* iOS Safari */
+  -webkit-user-select: all; /* Safari */
+  -khtml-user-select: all; /* Konqueror HTML */
+  -moz-user-select: all; /* Old versions of Firefox */
+  -ms-user-select: all; /* Internet Explorer/Edge */
+  user-select: all; /* Non-prefixed version, currently
+              supported by Chrome, Edge, Opera and Firefox */
 }
-html li {
-  list-style-type: none;
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+supported by Chrome, Edge, Opera and Firefox */
 }
-html a {
+body h2 {
+  font-size: 2em;
+}
+body #title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 8px;
+}
+body #title a {
   text-decoration: none;
+  padding: 16px;
+  z-index: 0;
+  font-size: 2.5em;
+  color: black;
+  font-weight: normal;
+  top: 16px;
+  border-radius: 20px;
+  background-image: linear-gradient(90deg, rgb(246, 149, 57) 0%, rgb(204, 135, 241) 100%);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  transition: background-size 0.7s, background-position 0.5s ease-in-out, color 0.5s ease-in-out, font-weight 0.5s ease-in-out;
+}
+@media screen and (max-width: 780px) {
+  body #title a {
+    font-size: 1em;
+  }
+}
+body #title a:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  color: white;
   font-weight: bold;
-  background: linear-gradient(to right, #437CCD, #45D6CA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  transition: background-position 0.7s, background-size 0.5s ease-in-out, color 0.5s ease-in-out, font-weight 0.5s ease-in-out;
 }
-html a:visited {
-  color: white;
-}
-html body {
-  margin: 0px;
-  width: 100%;
-}
-html body .mobile__top {
-  display: none;
-}
-@media screen and (max-width: 40em) {
-  html body .mobile__top {
-    display: block;
-    background-color: black;
-    height: 5vh;
-    width: 100%;
-  }
-}
-html body header {
-  display: block;
+body nav {
+  width: 200px;
   position: fixed;
-  height: 5em;
-  width: 100vw;
-  background-color: black;
-  color: white;
-  top: 0;
-  opacity: 100%;
+  top: 2px;
+  right: -300px;
+  z-index: 1;
+  border: 1px solid black;
+  background: linear-gradient(90deg, rgb(246, 149, 57) 0%, rgb(204, 135, 241) 100%);
+  box-shadow: inset 0 0 10px black;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  transition: right 0.5s ease;
 }
-@media screen and (max-width: 40em) {
-  html body header {
-    display: none;
+@media screen and (min-width: 480px) {
+  body nav {
+    width: 250px;
   }
 }
-html body header nav {
+body nav > a {
+  display: flex;
+  padding: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
   display: block;
-  height: 100%;
-  width: 100%;
+  transition: all 0.4s ease;
 }
-@media screen and (min-width: 40em) {
-  html body header nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-html body header nav .title {
-  font-size: 2em;
-  text-align: center;
-}
-@media screen and (min-width: 40em) {
-  html body header nav .title {
-    margin-left: 20px;
-  }
-}
-html body header nav .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-around;
-  text-align: center;
-  margin: auto;
-}
-@media screen and (min-width: 40em) {
-  html body header nav .navbar {
-    margin-right: 20px;
-  }
-}
-html body header nav .navbar a {
-  font-size: 1.2em;
-  min-width: 100px;
-  padding: 10px;
-}
-html body #scroller #one .container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-@media screen and (min-width: 40em) {
-  html body #scroller #one .container {
-    margin-top: 20px;
-    gap: 20px;
-  }
-}
-html body #scroller #one .container .primary-container {
-  flex-basis: 50%;
-  text-align: center;
-  background: linear-gradient(to right, #437CCD, #45D6CA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html body #scroller #one .container .primary-container h1 {
-  font-size: 2em;
-  font-weight: lighter;
-  margin: 0px;
-}
-@media screen and (min-width: 40em) {
-  html body #scroller #one .container .primary-container h1 {
-    font-size: 5em;
-  }
-}
-html body #scroller #one .container .primary-container h2 {
-  font-size: 1.5em;
-  font-weight: lighter;
-  border-bottom: 1px solid black;
-  margin: 0px;
-  padding-bottom: 5px;
-}
-@media screen and (min-width: 40em) {
-  html body #scroller #one .container .primary-container h2 {
-    font-size: 3em;
-  }
-}
-@media screen and (min-width: 40em) {
-  html body #scroller #one .container .primary-container p {
-    font-size: 1.5em;
-    margin-top: 5px;
-    margin-bottom: 0px;
-  }
-}
-html body #scroller #one .container .primary-container .container__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-html body #scroller #one .container img {
-  max-width: 500px;
-  min-width: 300px;
-  height: auto;
-  border-radius: 300px;
-}
-@media screen and (max-width: 1024px) {
-  html body #scroller #one .container img {
-    max-width: 350px;
-  }
-}
-html body #scroller #two {
-  background-color: grey;
-}
-html body #scroller #three {
-  background-color: white;
-}
-html body #scroller #four {
-  background-color: grey;
-}
-html body #myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: black;
+body nav > a:hover {
+  cursor: help;
+  translate: 5px;
   color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+}
+body nav p {
+  padding: 32px;
+}
+body .activeMenu {
+  right: 2px;
+  transition: 0.5s ease;
+}
+body #closeMenu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 18px;
 }
-html body #myBtn:hover {
-  background-color: #555;
+body #openMenu {
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  top: 8px;
+  right: 8px;
 }
-html body footer {
+body #openMenu span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+body section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
   display: none;
 }
+body section > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 75%;
+}
+@media screen and (max-width: 480px) {
+  body section > div {
+    width: 90%;
+    padding-top: 50px;
+  }
+}
+body section p {
+  color: black;
+}
+body #one {
+  background: linear-gradient(90deg, rgb(246, 149, 57) 0%, rgb(214, 241, 135) 100%);
+}
+body #two {
+  background: linear-gradient(90deg, rgb(214, 241, 135) 0%, rgb(57, 246, 196) 100%);
+}
+body #three {
+  background: linear-gradient(90deg, rgb(57, 246, 196) 0%, rgb(135, 187, 241) 100%);
+}
+body #three a {
+  font-size: 2em;
+  text-decoration: none;
+  padding: 16px;
+}
 @media screen and (max-width: 40em) {
-  html body footer {
+  body #three a {
+    font-size: 1em;
+  }
+}
+body .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .link a {
+  margin: 10px;
+  transform: translateY(0px);
+  transition: all 0.3s ease-in-out;
+}
+body .link a:hover {
+  transform: translateY(-5px);
+}
+body .section_show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: in 700ms ease-in-out both;
+  animation: in 700ms ease-in-out both;
+}
+@keyframes in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  position: fixed;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+@keyframes ripple-effect {
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 0.05;
+    margin: -60px;
+  }
+}
+.eye_container {
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  .eye_container {
     display: block;
-    background-color: black;
-    height: 5vh;
-    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 70px;
+  }
+  .eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: white;
+  }
+  .eye:after { /*pupil*/
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    content: " ";
   }
 }
 

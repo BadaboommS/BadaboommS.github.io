@@ -4,56 +4,71 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/scroller.css">
-        <link rel="stylesheet" href="style/page-load.css">
-        <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+        <link rel="stylesheet" href="style/profile.css">
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
         <script src="script/main.js" defer></script>
         <title>Yann Lindeboom 👍</title>
     </head>
-    <body>
-        <span class="mobile__top"></span>
-        <header>
-            <nav id="main-navigation">
-                <div class="title">
-                    <a href="#one">Yann Lindeboom</a>
+    <body id="page">
+        <div class='eye_container'>
+            <div class='eye'></div>
+            <div class='eye'></div>
+        </div>
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <header id="myHeader">
+            <div id="title">
+                <a href="#one">Yann Lindeboom</a>
+            </div>
+            <nav id='navbar'>
+                <a href="#one" class="navbar__a">| Accueil</a>
+                <a href="#two" class="navbar__a">| Qui suis-je?</a>
+                <a href="#three" class="navbar__a">| Contact</a>
+                <div class="link">
+                    <a href="https://www.linkedin.com/in/yann-lindeboom/" class="canSelect" title="https://www.linkedin.com/in/yann-lindeboom/"><img src="img/LinkedIn_icon.png" alt="LinkedIn" style="width: 50px; height:50px;"/></a>
+                    <a href="https://github.com/BadaboommS" class="canSelect" title="https://github.com/BadaboommS"><img src="img/GitHub-Mark.png" alt="GitHub" style="width: 60px; height: 60px;"/></a>
+                    <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com"><img src="img/mail_icon.png" alt="GitHub" style="width: 60px; height: 60px;"/></a>
                 </div>
-                <div class="navbar">
-                    <a href="#two" class="navbar__a">Qui suis-je?</a><p>|</p>
-                    <a href="#three" class="navbar__a">Experience</a><p>|</p>
-                    <a href="#four" class="navbar__a">Contact</a>
-                </div>
+                <button id="closeMenu">X</button>
             </nav>
+            <button id="openMenu">
+                <span></span>
+                <span></span>
+            </button>
         </header>
         <div id="scroller">
-            <section id="one">
-                <div class="container">
-                    <div class="primary-container">
-                        <h1 class="container__item">Yann Lindeboom</h1>
-                        <h2 class="container__item">Developpeur Front End</h2>
-                        <p class="container__item">Arrivé à bon port ou tout simplement perdu sur Internet?</p>
-                        <p class="container__item">Quoi qu'il en soit, je vous souhaite la bienvenue !</p>
+            <section id="one" class="section_show">
+                <div class="profile-container">
+                    <div class="profile">
+                    <div class="profile-content">
+                        <img src="img/IMG_2404.jpg" data-speed="0" class="container__item" alt="photo" />
+                        <div class="primary-container">
+                            <h2 data-speed="0" class="container__item">Developpeur Front End</h2>
+                            <p data-speed="0" class="container__item">Arrivé à bon port ou tout simplement perdu sur Internet?</p>
+                            <p data-speed="0" class="container__item">Quoi qu'il en soit, je vous souhaite la bienvenue sur mon site!</p>
+                        </div>
                     </div>
-                    <img src="img/IMG_2404.jpg" alt="photo"/>
+                    <div class="glow"></div>
+                    </div>
                 </div>
             </section>
             <section id="two">
-                <h2>About me</h2>
-                <p>Test</p>
+                <div class="container__item">
+                    <h2 data-speed="0.5" class="container__item">Qui suis-je?</h2>
+                    <h3 data-speed="0.5" class="container__item">Développement Web - Front-End</h3>
+                    <p data-speed="0.5" class="container__item">Arrivé depuis peu dans le domaine du développement web, j'aime expérimenter et apprendre de nouvelles manières de résoudre les problèmes. Je construis des sites avec la sainte trinité HTML - CSS - Javascript, même si je commence à utiliser des outils plus spécifiques tels que le SASS(SCSS) ou la librairie React.</p>
+                </div>
             </section>
             <section id="three">
-                <h2>Experience</h2>
-                <p>Test</p>
-            </section>
-            <section id="four">
-                <h2>Contact form</h2>
-                <p>Test</p>
+                <div class="container__item">
+                    <h2 data-speed="0.5" class="container__item">Contact</h2>
+                    <p data-speed="0.5" class="container__item">Si vous souhaitez me contacter, n'hésitez pas à me joindre sur mes réseaux sociaux ou par mail!</p>
+                    <div class="link">
+                        <a href="https://www.linkedin.com/in/yann-lindeboom/" class="canSelect" title="https://www.linkedin.com/in/yann-lindeboom/"><img src="img/LinkedIn_icon.png" alt="LinkedIn" style="width: 100px; height: 100px;"/></a>
+                        <a href="https://github.com/BadaboommS" class="canSelect" title="https://github.com/BadaboommS"><img src="img/GitHub-Mark.png" alt="GitHub" style="width: 120px; height: 120px;"/></a>
+                    </div>
+                    <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com">yann.lindeboomm@gmail.com</a>
+                </div>
             </section>
         </div>
-        <button onclick="topFunction()" id="myBtn" title="Revenir en haut"><img src="img/up.png" alt="Top" style="width:30px;height:20px;"/></button>
-        <footer>
-            <div>
-
-            </div>
-        </footer> 
     </body>
 </html>

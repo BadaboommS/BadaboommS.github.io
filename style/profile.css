@@ -1,0 +1,68 @@
+.profile-container {
+  perspective: 1000px;
+}
+.profile-container .profile {
+  width: 100%;
+  display: flex;
+}
+.profile-container .profile .profile-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid black;
+  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+  background: linear-gradient(90deg, rgb(218, 238, 233) 0%, rgb(177, 182, 187) 100%);
+}
+@media screen and (min-width: 780px) {
+  .profile-container .profile .profile-content {
+    flex-direction: row;
+    transition: all 0.15s ease;
+  }
+}
+.profile-container .profile .profile-content img {
+  border: 1px solid black;
+  width: clamp(250px, 40%, 500px);
+  border-radius: 100%;
+  margin: 10px auto;
+}
+.profile-container .profile .profile-content .primary-container {
+  border-radius: 25px;
+  font-size: 1em;
+  text-wrap: wrap;
+}
+.profile-container .profile .profile-content .primary-container h2 {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px dotted black;
+}
+.profile-container .profile .profile-content .primary-container p {
+  padding: 10px;
+  text-align: start;
+  margin: auto;
+}
+.profile-container .profile .glow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  opacity: 0.5;
+  transition: all 0.15s ease;
+  mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 780px) {
+  .profile-container .profile .glow {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=profile.css.map */
