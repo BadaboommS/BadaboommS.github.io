@@ -23,6 +23,9 @@ body {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
+  header{
+    overflow: hidden;
+  }
   h2{
     font-size: 2em;
   }
@@ -110,12 +113,16 @@ body {
     height: 35px;
     top: 8px;
     right: 8px;
+    &:hover span{
+      transform: scaleX(0.5);
+    }
     span {
       display: block;
       width: 35px;
       height: 5px;
       background-color: black;
-      margin: 6px 0;
+      margin: 6px auto;
+      transition: transform 0.3s ease;
     }
   }
   section {
@@ -129,12 +136,7 @@ body {
     & > div {
       @include flex;
       flex-direction: column;
-      margin-top: 50px;
       width: 75%;
-      @media screen and (max-width: 480px){
-        width: 90%;
-        padding-top: 50px;
-    }
     }
     p{
       color: black;
@@ -180,6 +182,9 @@ body {
       &:hover{
         transform: translateY(-5px);
       }
+      @media screen and (max-width: 780px){
+        margin: 5px;
+      }
     }
   }
   .section_show {
@@ -214,16 +219,16 @@ body {
   }
 }
 
-.eye_container{
+#eye-container{
   display: none;
 }
 @media screen and (min-width: 40em){
-  .eye_container {
+  #eye-container {
     display:block;
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 70px;
+    width: 65px;
   }
   .eye {
     position: relative;

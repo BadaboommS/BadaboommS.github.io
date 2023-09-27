@@ -20,6 +20,9 @@ body {
   user-select: none; /* Non-prefixed version, currently
 supported by Chrome, Edge, Opera and Firefox */
 }
+body header {
+  overflow: hidden;
+}
 body h2 {
   font-size: 2em;
 }
@@ -108,12 +111,16 @@ body #openMenu {
   top: 8px;
   right: 8px;
 }
+body #openMenu:hover span {
+  transform: scaleX(0.5);
+}
 body #openMenu span {
   display: block;
   width: 35px;
   height: 5px;
   background-color: black;
-  margin: 6px 0;
+  margin: 6px auto;
+  transition: transform 0.3s ease;
 }
 body section {
   position: absolute;
@@ -129,14 +136,7 @@ body section > div {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
   width: 75%;
-}
-@media screen and (max-width: 480px) {
-  body section > div {
-    width: 90%;
-    padding-top: 50px;
-  }
 }
 body section p {
   color: black;
@@ -173,6 +173,11 @@ body .link a {
 body .link a:hover {
   transform: translateY(-5px);
 }
+@media screen and (max-width: 780px) {
+  body .link a {
+    margin: 5px;
+  }
+}
 body .section_show {
   display: flex;
   justify-content: center;
@@ -206,17 +211,17 @@ body .section_show {
     margin: -60px;
   }
 }
-.eye_container {
+#eye-container {
   display: none;
 }
 
 @media screen and (min-width: 40em) {
-  .eye_container {
+  #eye-container {
     display: block;
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 70px;
+    width: 65px;
   }
   .eye {
     position: relative;

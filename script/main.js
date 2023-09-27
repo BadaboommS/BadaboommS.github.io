@@ -53,34 +53,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //bouger les yeux
-    root.addEventListener("mousemove", eyeball);
-    function eyeball(){
-      var eye = document.querySelectorAll('.eye');
-      eye.forEach(function(eye){
-        let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
-        let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
-        let radian = Math.atan2(event.pageX - x, event.pageY - y);
-        let rot = (radian * (180 / Math.PI) * -1) + 180;
-        eye.style.transform = "rotate("+ rot + "deg)";
-      })
+    function angle(cx, cy, ex, ey){
+      const dy = ey - cy;
+      const dx = ex - cx;
+      const rad = Math.atan2(dy,dx);
+      const deg = rad * 180 / Math.PI;
+      return deg;
     }
+    const anchor = document.getElementById('eye-container');
+    let rekt = anchor.getBoundingClientRect();
+    let anchorX = rekt.left + rekt.width / 2;
+    let anchorY = rekt.top + rekt.height / 2;
+    root.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const angleDeg = angle(mouseX,mouseY,anchorX,anchorY);
+      var eye = document.querySelectorAll('.eye');
+      eye.forEach(eye => {eye.style.transform = `rotate(${270 + angleDeg}deg)`;})
+    });        
     
     //glow+profile
     const profile = document.querySelectorAll(".profile");
 
     profile.forEach(el => {
       el.addEventListener("mousemove", e =>{
-        
-        let elRect = el.getBoundingClientRect();
+        var elRect = el.getBoundingClientRect();
+        var x = e.clientX - elRect.x;
+        var y = e.clientY - elRect.y;
+        var midProfileWidth = elRect.width / 2;
+        var midProfileHeight = elRect.height / 2;
       
-        let x = e.clientX - elRect.x;
-        let y = e.clientY - elRect.y;
-      
-        let midProfileWidth = elRect.width / 2;
-        let midProfileHeight = elRect.height / 2;
-      
-        let angleY = -(x - midProfileWidth) / 80;
-        let angleX = (y - midProfileHeight) / 80;
+        let angleY = -(x - midProfileWidth) / 24;
+        let angleX = (y - midProfileHeight) / 24;
         
         let glowX = x / elRect.width * 100;
         let glowY = y / elRect.height * 100;
