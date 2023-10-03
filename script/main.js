@@ -3,7 +3,7 @@ window.addEventListener("load", function() {
   // Cache la page de chargement avec une animation de transition
   const loader = document.querySelector(".loader");
   const sectionOne = document.getElementById('one');
-  setTimeout(function() {
+  this.setTimeout(function() {
       loader.style.opacity = "0";
       loader.style.pointerEvents = "none";
   }, 1000);
@@ -89,10 +89,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
       
     
-    //glow+profile
+  //glow+profile
+  const profiles = document.querySelectorAll(".profile");
 
-    const profile = document.querySelectorAll(".profile");
+  function handleMouseMove(event) {
+    const profileRect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - profileRect.x;
+    const y = event.clientY - profileRect.y;
+    const midProfileWidth = profileRect.width / 2;
+    const midProfileHeight = profileRect.height / 2;
 
+    const angleY = -(x - midProfileWidth) / 24;
+    const angleX = (y - midProfileHeight) / 24;
+
+    event.currentTarget.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+    
+    if(event.currentTarget.children[1].style.display === "block"){
+      const glowX = (x / profileRect.width) * 100;
+      const glowY = (y / profileRect.height) * 100;
+      event.currentTarget.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+      event.currentTarget.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255, 255, 255, 0.5), transparent`;
+      event.currentTarget.children[1].style.background = `-webkit-radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255, 255, 255, 0.5), transparent)`;
+    }
+  }
+
+  function handleMouseOut(event) {
+    if(event.currentTarget.children[1].style.display === "block"){
+      event.currentTarget.children[1].style.transform = "rotateX(0) rotateY(0)";
+      event.currentTarget.children[1].style.background = "none";
+    }
+    event.currentTarget.children[0].style.transform = "rotateX(0) rotateY(0)";
+  }
+
+  profiles.forEach((profile) => {
+    profile.addEventListener("mousemove", handleMouseMove);
+    profile.addEventListener("mouseout", handleMouseOut);
+  });
+
+    /* const profile = document.querySelectorAll(".profile");
     profile.forEach(el => {
       el.addEventListener("mousemove", e =>{
         var elRect = el.getBoundingClientRect();
@@ -109,14 +143,16 @@ document.addEventListener("DOMContentLoaded", () => {
             
         el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`
         el.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`
-        el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, white, transparent`
+        el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,255,255,0.5), transparent`
       });
-      el.addEventListener("mouseleave", () =>{
+      el.addEventListener("mouseout", () =>{
         el.children[0].style.transform = "rotateX(0) rotateY(0)"
         el.children[1].style.transform = "rotateX(0) rotateY(0)"
         el.children[1].style.background = "none"
       });
-    });
+    }); */
+
+    
 
     /* //glow+profile
     const profile = document.querySelectorAll(".profile");
@@ -162,7 +198,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }); */
+
     //easter-egg
     console.log("%cStop right there Criminal Scum! Nobody breaks the law on my watch! I'm confiscating your stolen goods. Now pay your fine or it\'s off to jail.","background-color : pink; color: black");
 });
-  
+
+//flashlight
+function toggleGlow(){
+  let button = document.getElementById('flashlight');
+  let light = document.getElementById('glow');
+  light.style.display = (light.style.display === "block"? "none":"block");
+  button.style.background = (button.style.background === "yellow"? "white":"yellow");
+}

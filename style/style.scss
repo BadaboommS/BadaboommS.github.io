@@ -234,7 +234,7 @@ body {
   }
 }
 
-#eye-container{
+#eye-container, #flashlight-container{
   display: none;
 }
 @media screen and (min-width: 40em){
@@ -264,8 +264,13 @@ body {
     border-radius: 50%;
     content: " ";
   }
+  #flashlight-container{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
 }
-
 /* Styles pour la page de chargement */
 .loader {
   position: fixed;

@@ -18,6 +18,9 @@
             <div class='eye'></div>
             <div class='eye'></div>
         </div>
+        <div id="flashlight-container">
+            <button id="flashlight" onclick="toggleGlow()"><img src="img/flashlight.png" al="flashlight"/></button>
+        </div>
         <header id="myHeader">
             <div id="title">
                 <a href="#one">Yann Lindeboom</a>
@@ -40,16 +43,16 @@
         </header>
         <div id="scroller">
             <section id="one">
-                <div class="profile" style="transform: rotateX(0deg) rotateY(0deg);">
+                <div class="profile">
                     <div class="profile-content">
-                        <img src="img/IMG_2404.jpg" data-speed="0"  alt="photo"/>
+                        <img src="img/IMG_2404.jpg" alt="photo"/>
                         <div class="primary-container">
                             <h2>Developpeur Front End</h2>
                             <p>Arrivé à bon port ou tout simplement perdu sur Internet?</p>
                             <p>Quoi qu'il en soit, je vous souhaite la bienvenue sur mon site!</p>
                         </div>
                     </div>
-                    <div class="glow"></div>
+                    <div id="glow"></div>
                 </div>
             </section>
             <section id="two">

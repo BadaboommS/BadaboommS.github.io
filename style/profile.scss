@@ -1,11 +1,12 @@
 .profile{
   display: flex;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0) rotateY(0);
+  background: none;
+  transition: all 0.15s ease-in-out;
   @media screen and (max-width: 780px){
     margin-top: 100px;
-  }
-  &:hover{
-    cursor: url('../img/flashlight.png'), auto;	
   }
   .profile-content{
     display: flex;
@@ -19,6 +20,8 @@
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     background-color: rgb(68, 95, 124);
+    transform: rotateX(0) rotateY(0);
+    transition: all 0.15s ease-in-out;
     @media screen and (min-width: 780px){
       gap: 20px;
       padding: 20px;
@@ -29,10 +32,11 @@
     img{
       width: clamp(250px, 40%, 500px);
       border-radius: 100%;
-      margin: 20px;
+      margin: 10px;
       box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
       @media screen and (min-width: 780px){
         transform:translateZ(30px);
+        margin-left: 30px;
       }
     }
     .primary-container{
@@ -44,7 +48,7 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+      text-shadow: 5px 5px 5px #d3d3d350;
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       transition: all 0.15s ease-in-out;
@@ -80,19 +84,23 @@
       }
     }
   }
-  .glow{
+  #glow{
     position: absolute;
+    display: none;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     border-radius: 25px;
-    opacity: 0.4;
-    transition: all 0.15s ease-in-out;
+    opacity: 0.5;
     z-index: 1;
-    background: radial-gradient(circle at 50% 0%, rgb(218,238,233), transparent);
+    transform: rotateX(0) rotateY(0);
+    transition: all 0.15s ease-in-out;
     @media screen and (max-width: 780px){
       display: none;
+    }
+    &:hover{
+      cursor: url('../img/flashlight.png'), auto;
     }
   }
 }
