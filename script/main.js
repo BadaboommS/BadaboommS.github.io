@@ -1,3 +1,17 @@
+// Attend que tous les éléments de la page soient chargés
+window.addEventListener("load", function() {
+  // Cache la page de chargement avec une animation de transition
+  const loader = document.querySelector(".loader");
+  const sectionOne = document.getElementById('one');
+  setTimeout(function() {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+  }, 1000);
+  this.setTimeout(()=>{
+    sectionOne.classList.add('section_show');
+  }, 1500);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     //menu latéral
     var nav = document.getElementById("navbar");
@@ -11,23 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   
     //gestion des liens
-    var links = document.querySelectorAll('a[href^="#"]');
+    const links = document.querySelectorAll('a[href^="#"]');
+    const allSections = document.querySelectorAll("section");
     links.forEach(function (link) {
     link.addEventListener("click", function (event) {
      event.preventDefault();
      var targetId = this.getAttribute("href");
      var targetElement = document.querySelector(targetId);
-     var allSection = document.querySelectorAll("section");
      if (targetElement) {
-        allSection.forEach((section) => {
+        allSections.forEach((section) => {
         section.classList.remove("section_show");
        });
-      targetElement.classList.add("section_show");
+      setTimeout(() => {
+        targetElement.classList.add("section_show");
+      }, 300);
         }
         nav.classList.remove("activeMenu");  
       });
     });
-  
+ 
     //effet de ripple (goutte d'eau) on click
     const root = document.documentElement;
     root.addEventListener("click", () => applyCursorRippleEffect(event));
@@ -64,15 +80,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let rekt = anchor.getBoundingClientRect();
     let anchorX = rekt.left + rekt.width / 2;
     let anchorY = rekt.top + rekt.height / 2;
-    root.addEventListener("mousemove", (e) => {
+    window.addEventListener("mousemove", (e) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
       const angleDeg = angle(mouseX,mouseY,anchorX,anchorY);
       var eye = document.querySelectorAll('.eye');
       eye.forEach(eye => {eye.style.transform = `rotate(${270 + angleDeg}deg)`;})
-    });        
+    });
+      
     
     //glow+profile
+
     const profile = document.querySelectorAll(".profile");
 
     profile.forEach(el => {
@@ -91,15 +109,60 @@ document.addEventListener("DOMContentLoaded", () => {
             
         el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`
         el.children[1].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`
-        el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgb(218,238,233), transparent`
+        el.children[1].style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, white, transparent`
       });
       el.addEventListener("mouseleave", () =>{
         el.children[0].style.transform = "rotateX(0) rotateY(0)"
         el.children[1].style.transform = "rotateX(0) rotateY(0)"
+        el.children[1].style.background = "none"
       });
     });
+
+    /* //glow+profile
+    const profile = document.querySelectorAll(".profile");
+    const glowElements = Array.from(profile).map(el => ({
+      element: el,
+      child1: el.children[0],
+      child2: el.children[1],
+    }));
+
+    const calculateTransformValues = (elRect, x, y) => {
+      const midProfileWidth = elRect.width / 2;
+      const midProfileHeight = elRect.height / 2;
+      
+      const angleY = -(x - midProfileWidth) / 24;
+      const angleX = (y - midProfileHeight) / 24;
+      
+      const glowX = (x / elRect.width) * 100;
+      const glowY = (y / elRect.height) * 100;
+      
+      return { angleX, angleY, glowX, glowY };
+    };
+
+    const resetTransform = (element) => {
+      element.style.transform = "rotateX(0) rotateY(0)";
+    };
+
+    profile.forEach(el => {
+      el.addEventListener("mousemove", e => {
+        const elRect = el.getBoundingClientRect();
+        const { angleX, angleY, glowX, glowY } = calculateTransformValues(elRect, e.clientX - elRect.x, e.clientY - elRect.y);
+
+        glowElements.forEach(glowEl => {
+          glowEl.child1.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+          glowEl.child2.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+          glowEl.child2.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgb(218,238,233), transparent`;
+        });
+      });
+
+      el.addEventListener("mouseleave", () => {
+        glowElements.forEach(glowEl => {
+          resetTransform(glowEl.child1);
+          resetTransform(glowEl.child2);
+        });
+      });
+    }); */
     //easter-egg
     console.log("%cStop right there Criminal Scum! Nobody breaks the law on my watch! I'm confiscating your stolen goods. Now pay your fine or it\'s off to jail.","background-color : pink; color: black");
-
-  });
+});
   

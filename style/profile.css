@@ -1,79 +1,118 @@
-.profile-container {
-  perspective: 1000px;
-}
-.profile-container .profile {
-  width: 100%;
+.profile {
   display: flex;
-  transition: all 0.15s ease;
+  -webkit-backface-visibility: hidden;
 }
-.profile-container .profile .profile-content {
-  margin: auto;
+@media screen and (max-width: 780px) {
+  .profile {
+    margin-top: 100px;
+  }
+}
+.profile:hover {
+  cursor: url("../img/flashlight.png"), auto;
+}
+.profile .profile-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  border: 2px solid black;
-  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+  outline: 1px solid transparent;
   border-radius: 25px;
-  width: 100%;
-  background: linear-gradient(90deg, rgb(218, 238, 233) 0%, rgb(177, 182, 187) 100%);
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-color: rgb(68, 95, 124);
 }
 @media screen and (min-width: 780px) {
-  .profile-container .profile .profile-content {
+  .profile .profile-content {
     gap: 20px;
     padding: 20px;
     height: 100%;
     flex-direction: row;
-    transition: all 0.15s ease;
+    transition: all 0.15s ease-in-out;
   }
 }
-.profile-container .profile .profile-content img {
-  border: 1px solid black;
+.profile .profile-content img {
   width: clamp(250px, 40%, 500px);
   border-radius: 100%;
   margin: 20px;
+  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
 }
-@media screen and (max-width: 780px) {
-  .profile-container .profile .profile-content img {
-    margin-bottom: 0px;
+@media screen and (min-width: 780px) {
+  .profile .profile-content img {
+    transform: translateZ(30px);
   }
 }
-.profile-container .profile .profile-content .primary-container {
-  width: 90%;
+.profile .profile-content .primary-container {
+  width: 100%;
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 0.15s ease-in-out;
 }
-.profile-container .profile .profile-content .primary-container h2 {
-  width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted black;
-}
-@media screen and (max-width: 780px) {
-  .profile-container .profile .profile-content .primary-container h2 {
-    font-size: 1.5em;
-    margin-top: 0px;
+@media screen and (min-width: 780px) {
+  .profile .profile-content .primary-container {
+    border-left: 2px solid black;
+    max-height: 500px;
   }
 }
-.profile-container .profile .profile-content .primary-container p {
-  width: 100%;
-  padding: 10px;
-  text-align: start;
-  margin: auto;
+@media screen and (max-width: 780px) {
+  .profile .profile-content .primary-container {
+    border-top: 1px dotted black;
+    width: 85%;
+  }
 }
-.profile-container .profile .glow {
+.profile .profile-content .primary-container h2 {
+  font-size: 3vw;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 780px) {
+  .profile .profile-content .primary-container h2 {
+    transform: translateZ(80px);
+  }
+}
+@media screen and (max-width: 780px) {
+  .profile .profile-content .primary-container h2 {
+    margin-top: 0px;
+    font-size: 2em;
+  }
+}
+.profile .profile-content .primary-container p {
+  font-size: 1.5vw;
+}
+@media screen and (min-width: 780px) {
+  .profile .profile-content .primary-container p {
+    transform: translateZ(60px);
+  }
+}
+@media screen and (max-width: 780px) {
+  .profile .profile-content .primary-container p {
+    margin-top: 0px;
+    font-size: 1em;
+    padding-bottom: 10px;
+  }
+}
+.profile .glow {
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   border-radius: 25px;
-  opacity: 0.5;
-  transition: all 0.15s ease;
-  mix-blend-mode: hard-light;
+  opacity: 0.4;
+  transition: all 0.15s ease-in-out;
+  z-index: 1;
   background: radial-gradient(circle at 50% 0%, rgb(218, 238, 233), transparent);
 }
 @media screen and (max-width: 780px) {
-  .profile-container .profile .glow {
+  .profile .glow {
     display: none;
   }
 }

@@ -11,6 +11,9 @@
     </head>
     <body id="page">
         <noscript>Your browser does not support JavaScript!</noscript>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
         <div id='eye-container'>
             <div class='eye'></div>
             <div class='eye'></div>
@@ -20,6 +23,7 @@
                 <a href="#one">Yann Lindeboom</a>
             </div>
             <nav id='navbar'>
+                <button id="closeMenu"><img src='img/close_nav.jpg' alt="close"/></button>
                 <a href="#one" class="navbar__a">| Accueil</a>
                 <a href="#two" class="navbar__a">| Qui suis-je?</a>
                 <a href="#three" class="navbar__a">| Contact</a>
@@ -28,7 +32,6 @@
                     <a href="https://github.com/BadaboommS" class="canSelect" title="https://github.com/BadaboommS"><img src="img/GitHub-Mark.png" alt="GitHub" style="width: 60px; height: 60px;"/></a>
                     <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com"><img src="img/mail_icon.png" alt="GitHub" style="width: 60px; height: 60px;"/></a>
                 </div>
-                <button id="closeMenu">X</button>
             </nav>
             <button id="openMenu">
                 <span></span>
@@ -36,37 +39,38 @@
             </button>
         </header>
         <div id="scroller">
-            <section id="one" class="section_show">
-                <div class="profile-container">
-                    <div class="profile">
+            <section id="one">
+                <div class="profile" style="transform: rotateX(0deg) rotateY(0deg);">
                     <div class="profile-content">
-                        <img src="img/IMG_2404.jpg" data-speed="0" class="container__item" alt="photo" />
+                        <img src="img/IMG_2404.jpg" data-speed="0"  alt="photo"/>
                         <div class="primary-container">
-                            <h2 data-speed="0" class="container__item">Developpeur Front End</h2>
-                            <p data-speed="0" class="container__item">Arrivé à bon port ou tout simplement perdu sur Internet?</p>
-                            <p data-speed="0" class="container__item">Quoi qu'il en soit, je vous souhaite la bienvenue sur mon site!</p>
+                            <h2>Developpeur Front End</h2>
+                            <p>Arrivé à bon port ou tout simplement perdu sur Internet?</p>
+                            <p>Quoi qu'il en soit, je vous souhaite la bienvenue sur mon site!</p>
                         </div>
                     </div>
                     <div class="glow"></div>
-                    </div>
                 </div>
             </section>
             <section id="two">
-                <div class="container__item">
-                    <h2 data-speed="0.5" class="container__item">Qui suis-je?</h2>
-                    <h3 data-speed="0.5" class="container__item">Développement Web - Front-End</h3>
-                    <p data-speed="0.5" class="container__item">Arrivé depuis peu dans le domaine du développement web, j'aime expérimenter et apprendre de nouvelles manières de résoudre les problèmes. Je construis des sites avec la sainte trinité HTML - CSS - Javascript, même si je commence à utiliser des outils plus spécifiques tels que le SASS(SCSS) ou la librairie React.</p>
+                <div>
+                    <h2 data-speed="1.5" class="container__item">Qui suis-je?</h2>
+                    <h3 data-speed="1" class="container__item">Développement Web - Front-End</h3>
+                    <p data-speed="0.5" class="container__item">Arrivé depuis peu dans le domaine du développement web, j'aime expérimenter et apprendre de nouvelles manières de résoudre des problèmes. Je construis des sites avec la sainte trinité HTML - CSS - Javascript, même si je commence à utiliser des outils plus spécifiques tels que le SASS(SCSS) ou ReactJS.</p>
+                    <h3 data-speed="1" class="container__item">Développement Web - Back-End</h3>
+                    <p data-speed="0.5" class="container__item">J'ai également commencé à éffleurer l'univers du Back-End avec des outils tels que Node.js, Express et MongoDB.</p>
+                    <p data-speed="500" class="container__item">Je vole !!!</p>
                 </div>
             </section>
             <section id="three">
-                <div class="container__item">
-                    <h2 data-speed="0.5" class="container__item">Contact</h2>
-                    <p data-speed="0.5" class="container__item">Si vous souhaitez me contacter, n'hésitez pas à me joindre sur mes réseaux sociaux ou par mail!</p>
+                <div>
+                    <h2>Contact</h2>
+                    <p>Si vous souhaitez me contacter, n'hésitez pas à me joindre sur mes réseaux sociaux ou par mail!</p>
                     <div class="link">
                         <a href="https://www.linkedin.com/in/yann-lindeboom/" class="canSelect" title="https://www.linkedin.com/in/yann-lindeboom/"><img src="img/LinkedIn_icon.png" alt="LinkedIn" style="width: 100px; height: 100px;"/></a>
                         <a href="https://github.com/BadaboommS" class="canSelect" title="https://github.com/BadaboommS"><img src="img/GitHub-Mark.png" alt="GitHub" style="width: 120px; height: 120px;"/></a>
                     </div>
-                    <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com">yann.lindeboomm@gmail.com</a>
+                    <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect email" title="yann.lindeboomm@gmail.com">yann.lindeboomm@gmail.com</a>
                 </div>
             </section>
         </div>
