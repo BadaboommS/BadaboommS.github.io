@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style/blink.css">
 </head>
 
 <body>
@@ -47,7 +48,7 @@
   <main>
     <section id="accueil" class="py-5">
       <div class="container">
-        <div class="row gy-4 text-center align-items-center">
+        <div class="row gy-4 my-5 text-center align-items-center">
           <div class="col-12 col-md-6">
             <h1 class="mb-5">Je suis Yann Lindeboom</h1>
             <h2>Arrivé à bon port ou tout simplement perdu sur Internet?</h2>
@@ -230,7 +231,7 @@
         </div>        
       </div>
     </section>
-    <section id="form" class="py-5 bg-light">
+    <section id="form" class="py-5 mb-5 bg-light">
       <div class="container">
         <h2>Un projet de création web ?</h2>
         <h3>Allons en discuter autour d'un café</h3>
@@ -265,13 +266,15 @@
       </div>
     </section>
   </main>
-  <footer class="border-top">
-    <div class="container py-5">
+  <div class="container py-5">
+  </div>
+  <footer class="border-top fixed-bottom bg-light">
+    <div class="container py-4">
       <div class="row gy-4">
-        <div class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#vanillaversion">Changer de version</a>
+                <a href="#" style="border: 3px solid red; animation: borderBlink 5s infinite;" class="text-decoration-none text-light btn btn-primary" data-bs-toggle="modal" data-bs-target="#vanillaversion">Changer de version</a>
             </li>
           </ul>
         </div>
@@ -296,8 +299,7 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="vanillaversion" tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
+    <div class="modal fade" id="vanillaversion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
@@ -310,7 +312,7 @@
               </p>
               <p>
                 <i class="fas fa-exclamation-circle"></i> Attention, cette version fait office de terrain de jeu et d'expérimentation CSS et JS !</br>
-                <i class="fas fa-skull"></i> Erreurs de code et responsive approximatif sont de mise <i class="fas fa-skull"></i>
+                <i class="fas fa-skull"></i> - Erreurs de code et responsive approximatif sont de mise - <i class="fas fa-skull"></i>
               </p>                  
           </div>
         </div>
