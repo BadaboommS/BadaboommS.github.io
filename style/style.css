@@ -79,7 +79,6 @@ body nav {
   }
 }
 body nav > a {
-  width: 180px;
   display: flex;
   padding: 20px;
   text-decoration: none;
