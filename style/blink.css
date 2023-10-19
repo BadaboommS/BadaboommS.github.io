@@ -1,4 +1,0 @@
-@keyframes borderBlink {0% {border-color: transparent;}50% {border-color: red;}100% {border-color: transparent;}}
-.modal-backdrop{
-    z-index: 0;
-}

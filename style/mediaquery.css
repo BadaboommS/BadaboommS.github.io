@@ -1,0 +1,229 @@
+@media (max-width: 650px){
+    #burger{
+        display: block;
+    }
+    #burger:before{
+        content: "\2630";
+    }
+    .active #burger:before{
+        content: "\2715";
+    }
+    nav h3{
+        font-size: calc(1.5rem + 1.5vw);
+        margin: auto;
+        padding: 20px 0;
+    }
+    nav ul{
+        z-index: -1;
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        flex-direction: column;
+        background: lightgrey;
+        width: 100%;
+        padding-top: 10px;
+        transition: 0.25s;
+    }
+    nav li{
+        text-align: center;
+    }
+    nav li a{
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+    nav li:hover{
+        background: rgb(230, 230, 230);
+    }
+    nav.active ul{
+        left: 0;
+        animation: showMenu 0.4s ease-in-out;
+    }
+}
+@media (min-width: 650px){
+    #maintitle a:hover{
+        color: transparent;
+        text-shadow: none;
+    }
+    #accueil{
+        animation: mainY 5s linear infinite;
+    }
+    #accueil a:hover{
+        color: black;
+        transform: scale(1.1);
+        transition: transform 0.25s color 0.25s 0.25s;
+    }
+    #accueil a.active{
+        animation: btnDown 0.5s ease;
+    }
+    .skills-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        transition: all 1s;
+    }
+    #skills .fake-skills img{
+        width: clamp(300px, 90%, 1000px);
+    }
+    #skills .true-skills{
+        top: 10%;
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 10px 0;
+        margin: 10px 0;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    #skills .true-skills h3{
+        font-size: calc(2rem + 1.5vw);
+    }
+    #skills .true-skills a {
+        font-size: calc(1rem + 1vw);
+        background: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        transform: scale(1);
+        transition: 0.3s;
+    }
+    #skills .true-skills a:hover{
+        cursor: pointer;
+        color: black;
+        text-shadow: none;
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+    #skills .hidden-text{
+        display: block;
+        top: 0;
+        left: -100%;
+        width: 90%;
+        margin: 10px 0;
+        padding: 20px;
+        position: absolute;
+        background: rgb(255,255,255,1);
+        font-size: calc(1rem + 1vh);
+        transition: 0.5s;
+    }
+    #skills.active .hidden-text{
+        left: 5%;
+        transition: 0.5s;
+    }
+    #close-progress{
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        animation: progressBtnShake 1s ease-in-out infinite both;
+        font-size: calc(1rem + 1vh);
+    }
+    #close-progress:hover{
+        cursor: pointer;
+    }
+    @keyframes progressBtnShake {
+        0% {
+            transform: rotate(0deg);
+        }
+        5%{
+            transform: rotate(-5deg);
+        }
+        10% {
+            transform: rotate(5deg);
+        }
+        15% {
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+     }
+    .fav-skills div{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .fav-skills div > div{
+        width: 20%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .fav-skills div > div p{
+        margin-left: 0;
+    }
+    .pro{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+    .ripple {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+        position: fixed;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+    .availability img{
+        animation: mainY 5s linear infinite;
+    }
+    .links a:hover{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes showMenu{
+    0%{
+        left: -100%;
+        transform: scaleX(1.5);
+    }
+    70%{
+        left: 20%;
+        transform: scaleX(0.8);
+    }
+    80%{
+        left: -10;
+        transform: scaleX(1.1);
+      }
+    100%{
+        left: 0;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes ripple-effect {
+    to {
+      width: 100px;
+      height: 100px;
+      opacity: 0.05;
+      margin: -60px;
+    }
+}
+
+@keyframes mainY{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes btnDown{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(1500px);
+    }
+}
