@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="style/mediaquery.css">
+        <link rel="stylesheet" href="style/loader.css">
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
         <script src="script/main.js" defer></script>
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
-        <title>Portefolio - Yann Lindeboom</title>
+        <title>Portfolio - Yann Lindeboom</title>
     </head>
     <body>
         <noscript>Your browser does not support JavaScript!</noscript>
@@ -18,13 +19,13 @@
                 <h3 id="maintitle"><a href="#accueil">YANN LINDEBOOM</a></h3>
                 <ul class="menu">
                     <li>
-                        <a href="#who">Qui suis-je ?</a>
+                        <a href="#who">Who am I?</a>
                     </li>
                     <li>
                         <a href="#projects">Projets</a>
                     </li>
                     <li>
-                        <a href="#skills">Compétences</a>
+                        <a href="#skills">Skills</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
@@ -36,76 +37,78 @@
         <main>
             <section id="accueil">
                 <h2>Je suis <span class="canSelect">Yann Lindeboom</span></h2>
-                <h3>Arrivé à bon port ou tout simplement perdu sur Internet?</br>Quoi qu'il en soit, je vous souhaite la bienvenue sur mon site!</h3>
-                <a href="#who" class="accueilBtn">Qui suis-je?</a>
+                <h3>Arrived safely or simply lost on the Internet?</br>Either way, welcome to my site!</h3>
+                <a href="#who" class="accueilBtn">Who am I?</a>
             </section>
             <section id="who">
-                <h2>Qui suis-je?</h2>
+                <h2>Who am I?</h2>
                 <img src="img/IMG_2404.jpg" alt="It\'s me!">
                 <div class="who_info">
-                    <h3>Développement Web - Front-End</h3>
-                    <p>Arrivé depuis peu dans le domaine du développement web, j'aime expérimenter et apprendre de nouvelles manières de résoudre des problèmes. Je construis des sites avec la sainte trinité HTML - CSS - Javascript, même si je commence à utiliser des outils plus spécifiques tels que le SASS(SCSS) ou ReactJS.</p>
-                    <h3>Développement Web - Back-End</h3>
-                    <p>J'ai également commencé a éffleurer l'univers du Back-End avec des outils tels que Node.js, Express et MongoDB.</p>
-                </div>            
+                    <h3>A quick introduction</h3>
+                    <p>Hi! My name is Yann Lindeboom. I recently commited to learning web development to fulfill my urge to learn.</br>I especialy love experimenting and trying new ways to resolve problems !</p>
+                    <h3>Web Development - Front-End</h3>
+                    <p>I build website with the holy trinity HTML - CSS - JS, but i recently got into using more specific tools like React JS and SASS.</p>
+                    <h3>Web Development - Back-End</h3>
+                    <p>Back-End wise, i don't have a lot of experience yet, but i have some knowledge of Node.js, Express and MongoDB.</p>
+                </div>
             </section>
             <section id="projects">
-                <h2>Mes Projets Perso</h2>
-                <h4>(Empty)</h4>
+                <h2>My personal Projects</h2>
+                <h4>(WiP)</h4>
             </section>
             <section id="skills">
-                <h2>Mes compétences</h2>
+                <h2>My Skills</h2>
                 <div class="skills-container">
                     <div class="fake-skills">
                         <img src="img/fake_bar.png" alt="fake_bar"/>
                     </div>
                     <div class="true-skills">
-                    <h3>Des progress bar?</h3>
-                    <a class="progress-btn">Quel intérêt?</a>
+                    <h3>Progress Bars?</h3>
+                    <a class="progress-btn">What's the point?</a>
                     </div>
                     <div class="hidden-text">
-                    <h3>Avis personnel</h3>
-                    <p>Lorsque l'on apprend le développement web ou que l'on crée son portefolio, on est amené a apprendre les progress bar.</p>
-                    <p>Seulement... On ne va pas se mentir, elles ne veulent pas dire grand chose... </p>
-                    <p>En effet, sur quels critères se baser pour les remplirs? Connaissances? Aisance avec le langage? Facilité?</p>
-                    <p>Dans les faits, je préfère parler de technologie favorites ou familières.</p>
-                    <button id="close-progress">Au revoir les progress bar !</button>
+                    <h3>Personal opinion</h3>
+                    <p>When you're learning web development at some point, you'll learn about progress bars.</p>
+                    <p>However... Let's face it, they don't mean much...</p>
+                    <p>What criteria should be used to fill them in? Knowledge? Language skills? Ease of use?</p>
+                    <p>In fact, I prefer to talk about favorite or familiar technologies.</p>
+                    <button id="close-progress">Goodbye progress bars!</button>
                     </div>
                 </div> 
                 <div class="fav-skills">
-                    <h3>Technologies favorites</h3>
+                    <h3>Favourite technologies</h3>
                     <div class="languages">
                         <div>
-                            <img src="img/react.svg" alt="ReactJS"/>
+                            <img src="img/react.svg" alt="ReactJS" title="ReactJS"/>
                             <p><strong>ReactJS</strong></p>
                         </div>
                         <div>
-                            <img src="img/typescript.png" alt="Typescript"/>
+                            <img src="img/typescript.png" alt="Typescript" title="Typescript"/>
                             <p>Typescript</p>
                         </div>
                         <div>
-                            <img src="img/sass.svg" alt="Sass"/>
+                            <img src="img/sass.svg" alt="Sass" title="Sass"/>
                             <p>Sass</p>
                         </div>
                     </div>
                     <h3>Autres outils</h3>
                     <div class="others">
                         <div>
-                            <img src="img/square-github.svg" alt="Github"/>
+                            <img src="img/square-github.svg" alt="Github" title="Git / GitHub"/>
                             <p>Git / Github</p>
                         </div>
                         <div>
-                            <img src="img/agile_icon.png" alt="Agile"/>
-                            <p>Méthodes agiles</p>
+                            <img src="img/agile_icon.png" alt="Agile" title="Agile Methods"/>
+                            <p>Agile Methods</p>
                         </div>
                     </div>
                 </div>
             </section>
             
             <section id="contact">
-                <h2>Vous désirez me contacter?</h2>
+                <h2>Want to contact me?</h2>
                 <div>
-                    <h3>Mes réseaux</h3>
+                    <h3>My socials</h3>
                     <div class="links">
                         <a href="https://www.linkedin.com/in/yann-lindeboom" class="canSelect" title="LinkedIn">
                             <img src="img/linkedin.svg" alt="LinkedIn" width="70px"/>
@@ -119,20 +122,23 @@
                     </div>
                     <div class="pro">
                         <div class="availability">
-                            <h3>Statut actuel</h3>
-                            <p class="available">Disponible</p>
-                            <p class="notavailable">Indisponible</p>
+                            <h3>Status</h3>
+                            <p class="available">Available</p>
+                            <p class="notavailable">Not Available</p>
                             <img src="img/thumbs-up-solid.svg" alt="Yes!" width="100px"/>
                         </div>
                         <div class="pro_info">
-                            <div class="CV">
-                                <h3>Mon curriculum vitae</h3>
+                            <div class="Resume">
+                                <h3>Resume</h3>
+                                <a href="cv/Lindeboom_Resume_FullStack_POEI.pdf" class="canSelect" title="CV"><img src="img/file-solid.svg" width="50px"/></a>
+                                <p>English version</p>
                                 <a href="cv/Lindeboom_CV_FullStack_POEI.pdf" class="canSelect" title="CV"><img src="img/file-solid.svg" width="50px"/></a>
+                                <p>French version</p>
                             </div>
-                            <div class="mail">
-                                <h3>Interessé par mon profil?</h3>
-                                <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com"><img src="img/handshake-solid.svg" alt="Contact me" width="80px"/></a>
-                            </div>
+                        </div>
+                        <div class="mail">
+                            <h3>Get in touch !</h3>
+                            <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com"><img src="img/handshake-solid.svg" class="handshake" alt="Contact me" width="100px"/></a>
                         </div>
                     </div>
                 </div> 
@@ -140,4 +146,7 @@
             <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
         </main>
     </body>
+    <div id="page-loader">
+        <h1>YL</h1>
+    </div>
 </html>

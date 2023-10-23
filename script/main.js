@@ -1,10 +1,19 @@
+//page loader
+const body = document.querySelector("body");
+const loader = document.getElementById("page-loader");
+const loaderTitle = document.querySelector("#page-loader h1");
+setTimeout(()=>{
+  loader.style.opacity = "0";
+  body.style.display = "block";
+  setTimeout(()=>{loader.style.display = "none"}, 500)  
+}, 1800);
+
 // set background gradient colors and angle using mouse
 document.onmousemove = e => {
   var boxw = document.body.getBoundingClientRect().width;
   var boxh = document.body.getBoundingClientRect().height;
   var x = e.clientX - (boxw / 2);
   var y = e.clientY - (boxh /8);
-  console.log(x,y);
   var rad = Math.atan(y / x) + Math.PI * (x < 0 ? 1.5 : 0.5);
   var deg = rad * 180 / Math.PI;
   maintitle.style.backgroundImage =
@@ -82,3 +91,4 @@ function applyCursorRippleEffect(e) {
 
 //easter-egg
 console.log("%cStop right there Criminal Scum! Nobody breaks the law on my watch! I'm confiscating your stolen goods. Now pay your fine or it\'s off to jail.","background-color : pink; color: black");
+

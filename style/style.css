@@ -61,7 +61,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: calc(0.8rem + 1vw);
+    font-size: calc(0.7rem + 1vw);
 }
 nav ul{
     display: flex;
@@ -73,6 +73,7 @@ nav h3{
     border: none;
     font-size: calc(0.9rem + 1.5vw);
     background-image:linear-gradient(5rad, rgb(145, 8, 117), rgb(117, 145, 8));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -110,7 +111,7 @@ section h2{
     font-size: calc(2rem + 1.5vw);
 }
 #accueil h3{
-    text-align: justify;
+    text-align: center;
     width: 70%;
     font-size: calc(1rem + 1.5vw);
 }
@@ -172,6 +173,7 @@ section h2{
 }
 .fav-skills div > div p{
     margin-left: 10px;
+    font-size: calc(1rem + 1vw) ;
 }
 
 /*Contact*/
@@ -226,11 +228,32 @@ section h2{
     background-color: red;
     border-radius: 10px;
 }
+.handshake{
+    transform: translateY(0);
+    transition: 0.5s;
+}
+.handshake:hover{
+    animation: handshakeMove 0.8s ease-in-out both infinite;
+}
+@keyframes handshakeMove{
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(-10px);
+    }
+    66%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 
 
 /*Return to top btn*/
 #myBtn {
-    width: 50px;
+    width: 60px;
     display: none;
     position: fixed;
     bottom: 20px;
@@ -243,13 +266,13 @@ section h2{
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-    font-size: calc(1rem + 1vh);
+    font-size: 30px;
     content: "\2191";
     transition: 0.25s;
-  }
-  
-  #myBtn:hover {
+}
+
+#myBtn:hover {
     background-color: #555;
     color: white;
     transition: 0.25s;
-  }
+}
