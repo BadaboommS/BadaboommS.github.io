@@ -2,6 +2,8 @@
 const body = document.querySelector("body");
 const loader = document.getElementById("page-loader");
 const loaderTitle = document.querySelector("#page-loader h1");
+document.body.scrollTop = 0; // Safari
+document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
 setTimeout(()=>{
   loader.style.opacity = "0";
   body.style.display = "block";
