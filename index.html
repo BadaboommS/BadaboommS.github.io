@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style/mediaquery.css">
         <link rel="stylesheet" href="style/loader.css">
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="https://fonts.cdnfonts.com/css/callie-chalk-font" rel="stylesheet">
         <script src="script/main.js" defer></script>
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
@@ -31,12 +32,27 @@
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
-                <div id="burger"></div>
             </nav>
+            <div id="query-nav">
+                <ul>
+                    <li>
+                        <a href="#who">&#9830;</a>
+                    </li>
+                    <li>
+                        <a href="#projects">&#9830;</a>
+                    </li>
+                    <li>
+                        <a href="#skills">&#9830;</a>
+                    </li>
+                    <li>
+                        <a href="#contact">&#9830;</a>
+                    </li>
+                </ul>
+            </div>
         </header>
         <main>
             <section id="accueil">
-                <h2>I'm <span class="canSelect">Yann Lindeboom</span></h2>
+                <h2>I'm <span class="canSelect"><strong>Yann Lindeboom</strong></span></h2>
                 <h3>Well arrived or simply lost on the Internet?</br>Either way, welcome to my site!</h3>
                 <a href="#who" class="accueilBtn">Who am I?</a>
             </section>
@@ -71,7 +87,7 @@
                     <a class="progress-btn">What's the point?</a>
                     </div>
                     <div class="hidden-text">
-                    <h3>Personal opinion</h3>
+                    <h3 style="color: black;">Personal opinion</h3>
                     <p>When you're learning web development at some point, you'll learn about progress bars.</p>
                     <p>However... Let's face it, they don't mean much...</p>
                     <p>What criteria should be used to fill them in? Knowledge? Language skills? Ease of use?</p>
@@ -95,7 +111,7 @@
                             <p>Sass</p>
                         </div>
                     </div>
-                    <h3>Autres outils</h3>
+                    <h3>Others</h3>
                     <div class="others">
                         <div>
                             <img src="img/square-github.svg" alt="Github" title="Git / GitHub"/>
@@ -108,7 +124,6 @@
                     </div>
                 </div>
             </section>
-            
             <section id="contact">
                 <h2>Want to contact me?</h2>
                 <div>
@@ -147,10 +162,10 @@
                     </div>
                 </div> 
             </section>
-            <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">&#9757;</button>
         </main>
     </body>
     <div id="page-loader">
-        <h1>YL</h1>
+        <h1><strong>YL</strong></h1>
     </div>
 </html>

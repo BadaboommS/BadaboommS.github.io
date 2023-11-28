@@ -10,6 +10,7 @@ setTimeout(()=>{
   setTimeout(()=>{loader.style.display = "none"}, 500)  
 }, 1800);
 
+/*
 // set background gradient colors and angle using mouse
 document.onmousemove = e => {
   var boxw = document.body.getBoundingClientRect().width;
@@ -21,27 +22,19 @@ document.onmousemove = e => {
   maintitle.style.backgroundImage =
     "linear-gradient(" + rad + "rad, hsl(" + deg + ",90%,30%), hsl(" + (deg + 120) + ",90%,30%))";
 };
-
-//Burgernav
-const links = document.querySelectorAll('nav li');
-burger.addEventListener("click", () =>{
-    nav.classList.toggle("active");
-});
-links.forEach((link) => {
-    link.addEventListener("click", () =>{
-        nav.classList.remove("active");
-    })
-});
-
+*/
 
 //Scroll Btn
 let mybutton = document.getElementById("myBtn");
+let navBg = document.getElementById("nav");
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
+    navBg.style.background = "silver";
   } else {
     mybutton.style.display = "none";
+    navBg.style.background = "none";
   }
 }
 function topFunction() {

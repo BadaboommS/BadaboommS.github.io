@@ -1,52 +1,45 @@
 @media (max-width: 650px){
-    #burger{
-        display: block;
-    }
-    #burger:before{
-        content: "\2630";
-    }
-    .active #burger:before{
-        content: "\2715";
-    }
     nav h3{
-        font-size: calc(1.5rem + 1.5vw);
+        padding: 20px 10px;
         margin: auto;
-        padding: 20px 0;
     }
-    nav ul{
-        z-index: -1;
-        position: fixed;
-        left: -100%;
-        top: 50px;
-        flex-direction: column;
-        background: lightgrey;
-        width: 100%;
-        padding-top: 10px;
-        transition: 0.25s;
+    .menu{
+        display: none;
     }
-    nav li{
-        text-align: center;
-    }
-    nav li a{
-        padding: 10px 0;
+    #query-nav{
         display: block;
-        width: 100%;
     }
-    nav li:hover{
-        background: rgb(230, 230, 230);
+    #query-nav ul{
+        display: flex;
+        z-index: 99;
+        font-size: 40px;
+        position: fixed;
+        top: 50%;
+        right: 5px;
+        flex-direction: column;
+        color: white;
+        width: 5%;
     }
-    nav.active ul{
-        left: 0;
-        animation: showMenu 0.4s ease-in-out;
+    body{
+        padding-right: 15px;
+    }
+}
+@media (min-width: 1800px){
+    #maintitle a{
+        padding-left: 20px;
     }
 }
 @media (min-width: 650px){
+    #menu{
+        font-size: calc(0.5rem + 1vw);
+    }
     #maintitle a:hover{
-        color: transparent;
+        color: white;
         text-shadow: none;
+        transition: all 0.25s;
     }
     #accueil{
-        animation: mainY 5s linear infinite;
+        animation: mainY 10s linear infinite;
     }
     #accueil a:hover{
         color: black;
@@ -88,9 +81,11 @@
     }
     #skills .true-skills h3{
         font-size: calc(2rem + 1.5vw);
+        color: black;
     }
     #skills .true-skills a {
         font-size: calc(1rem + 1vw);
+        color:black;
         background: white;
         border: 1px solid black;
         border-radius: 10px;
@@ -148,6 +143,9 @@
             transform: rotate(0deg);
         }
      }
+     .fav-skills h3{
+        margin: 20px 0;
+     }
     .fav-skills div{
         flex-direction: row;
         justify-content: space-around;
@@ -168,6 +166,7 @@
     }
     .pro div{
         min-width: 150px;
+        max-width: 250px;
     }
     .ripple {
         width: 0;
@@ -182,25 +181,6 @@
     }
     .links a:hover{
         transform: translateY(-10px);
-    }
-}
-
-@keyframes showMenu{
-    0%{
-        left: -100%;
-        transform: scaleX(1.5);
-    }
-    70%{
-        left: 20%;
-        transform: scaleX(0.8);
-    }
-    80%{
-        left: -10;
-        transform: scaleX(1.1);
-      }
-    100%{
-        left: 0;
-        transform: scaleX(1);
     }
 }
 
