@@ -31,7 +31,7 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
-    navBg.style.background = "silver";
+    navBg.style.background = "#06c";
   } else {
     mybutton.style.display = "none";
     navBg.style.background = "none";

@@ -132,10 +132,10 @@ section h2{
     font-size: calc(1rem + 1.5vw);
 }
 #accueil a{
-    font-size: calc(1rem + 1.5vw);
+    font-size: calc(1rem + 1vw);
     color: black;
     padding: 20px;
-    background: lightgrey;
+    background: white;
     border-radius: 10px;
     border: 1px solid black;
     transform: scale(1);

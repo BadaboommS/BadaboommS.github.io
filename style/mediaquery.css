@@ -24,18 +24,15 @@
         padding-right: 15px;
     }
 }
-@media (min-width: 1800px){
-    #maintitle a{
-        padding-left: 20px;
-    }
-}
 @media (min-width: 650px){
     #menu{
         font-size: calc(0.5rem + 1vw);
     }
+    #maintitle{
+        padding: 0 0 0 50px;
+    }
     #maintitle a:hover{
-        color: white;
-        text-shadow: none;
+        text-shadow: 2px 2px 2px white;
         transition: all 0.25s;
     }
     #accueil{
