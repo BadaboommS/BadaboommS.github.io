@@ -1,4 +1,7 @@
-@media (max-width: 650px){
+@media (max-width: 768px){
+    #container{
+        flex-direction: column;
+    }
     nav h3{
         padding: 20px 10px;
         margin: auto;
@@ -24,14 +27,16 @@
         padding-right: 15px;
     }
 }
-@media (min-width: 650px){
+@media (min-width: 768px){
+    body{
+        height: 100vh;
+    }
     main{
         overflow-x: hidden;
         position: relative;
         width: 500vw;
     }
     #container{
-        display: flex;
         flex-direction: row;
     }
     #menu{
