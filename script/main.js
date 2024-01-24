@@ -8,7 +8,7 @@ setTimeout(()=>{
   loader.style.opacity = "0";
   body.style.display = "block";
   setTimeout(()=>{loader.style.display = "none"}, 500)  
-}, 1800);
+}, 2000);
 
 /*
 // set background gradient colors and angle using mouse
@@ -24,7 +24,7 @@ document.onmousemove = e => {
 };
 */
 
-//Scroll Btn
+/* //Scroll Btn
 let mybutton = document.getElementById("myBtn");
 let navBg = document.getElementById("nav");
 window.onscroll = function() {scrollFunction()};
@@ -40,15 +40,9 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; // Safari
   document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
-}
+} */
 
-accueilBtn = document.querySelector(".accueilBtn");
-accueilBtn.addEventListener("click",()=>{
-    accueilBtn.classList.add("active");
-    setTimeout(()=>{accueilBtn.classList.remove("active")}, 1000);
-});
-
-//True Skill Display
+/* //True Skill Display
 fakeSkills = document.querySelector(".fake-skills");
 trueSkills = document.querySelector(".true-skills");
 skillsContainer = document.querySelector(".skills-container");
@@ -68,7 +62,7 @@ progressBtn.addEventListener("click", () =>{
 closeProgress.addEventListener("click", () =>{
   skillsContainer.style.transform = "rotate(360deg) scale(0)";
   setTimeout(()=>{skillsContainer.remove();}, 500);
-});
+}); */
 
 //effet de ripple (goutte d'eau) on click
 const root = document.documentElement;
