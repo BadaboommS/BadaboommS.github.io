@@ -53,9 +53,9 @@ let st = scrollTween.scrollTrigger,
     a.addEventListener('click', (e) => {
         e.preventDefault();
         gsap.to(window, {
-        scrollTo: {
-            y: st.start + progress * (st.end - st.start),
-        },
+            scrollTo: {
+                y: st.start + progress * (st.end - st.start),
+            },
         });
     });
 });
