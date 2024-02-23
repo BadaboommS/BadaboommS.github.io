@@ -189,6 +189,7 @@ section h2{
 
 /*Projects*/
 #projects .card_container{
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -196,6 +197,7 @@ section h2{
     align-items: flex-start;
 }
 #projects .card{
+    height: 100%;
     max-width: 40vw;
     padding: 10px;
     border-radius: 10px;
