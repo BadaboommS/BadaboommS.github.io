@@ -10,6 +10,18 @@ setTimeout(()=>{
   setTimeout(()=>{loader.style.display = "none"}, 500)  
 }, 2000);
 
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+const nav = document.querySelector("nav");
+if (isMobile() && (window.screen.width < 768)) {
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) nav.style.background = '#06c';
+    else nav.style.background = 'none';
+  });
+}
+
+
 /*
 // set background gradient colors and angle using mouse
 document.onmousemove = e => {

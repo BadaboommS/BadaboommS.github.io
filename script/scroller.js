@@ -15,7 +15,7 @@ let scrollTween = gsap.to(sections, {
         pin: true,
         scrub: 1,
         delay: 0,
-        end: () => '+=' + innerWidth * sections.length,
+        end: () => '+=' + (innerWidth * sections.length)/2,
         onUpdate: (self) => {
             const newIndex = Math.round(self.progress / snapVal);
             if (newIndex !== lastIndex) {
