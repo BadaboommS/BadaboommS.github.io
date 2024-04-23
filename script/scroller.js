@@ -47,8 +47,9 @@ sections.forEach(section => {
 
 const navList = document.querySelectorAll('.anchor');
 
+let projectPosition = null;
 navList.forEach((a, i) => {
-let st = scrollTween.scrollTrigger,
+    let st = scrollTween.scrollTrigger,
     progress = (1 / (sections.length - 1)) * i; 
     a.addEventListener('click', (e) => {
         e.preventDefault();
@@ -58,4 +59,7 @@ let st = scrollTween.scrollTrigger,
             },
         });
     });
+    if(i === 2){
+        projectPosition = st.start + progress * (st.end - st.start);
+    }
 });

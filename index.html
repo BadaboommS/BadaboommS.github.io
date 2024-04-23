@@ -63,20 +63,69 @@
                     <h2>My personal Projects</h2>
                     <p>(Feel free to give feedback!)</p>
                     <div class="card_container">
-                        <div class="card anim">
+                        <div id="modalBtn1" class="modalBtn card anim">
                             <h3>Property reservation management website</h3>
-                            <p>- API request management and front-end interactivity.</p>
-                            <p>- CRUD routes and authorisation management.</p>
-                            <p><u>Stack:</u> MERN (MongoDb, Express, ReactJs, Node.js).</p>
-                            <img src='img/MERN.png' alt="MERN" title="MERN"/>
+                            <!-- Trigger/Open The Modal -->
                         </div>
-                        <div class="card anim">
+                        <!-- Modal 1 -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <span id="modalClose1" class="modalClose">&times;</span>
+                                <h3>Property reservation management website</h3>
+                                <p>- API request management and front-end interactivity.</p>
+                                <p>- CRUD routes and authorization management.</p>
+                                <p><u>Stack:</u> MERN (MongoDb, Express, ReactJs, Node.js)</p>
+                                <img src='img/MERN.png' alt="MERN" title="MERN"/>
+                            </div>
+                        </div>
+                        <div id="modalBtn2" class="modalBtn card anim">
                             <h3>Utility app for a video game</h3>
-                            <p>- Processing and manipulation of encrypted data to generate a customised interface and queries for Path Of Exile trading site.</p>
-                            <span><u>Link:</u><a href="https://portfolio.yann-lindeboom.tech/PoeTradeHelper/" title="https://portfolio.yann-lindeboom.tech/PoeTradeHelper/" class="canSelect">Here</a></span>
-                            <button title="Try with my most recent build!" onclick="copyCode()" class="copy_code canSelect">Test</button>
-                            <p><u>Stack:</u> ReactJS.</p>
-                            <img src="img/react.svg" alt="ReactJS" title="ReactJS"/>
+                        </div>
+                        <!-- Modal 2 -->
+                        <div id="modal2" class="modal">
+                            <div class="modal-content">
+                                <span id="modalClose2" class="modalClose">&times;</span>
+                                <h3>Utility app for a video game</h3>
+                                <p>- Processing and manipulation of encrypted data to generate a customised interface and queries for Path Of Exile trading site.</p>
+                                <p>You can Try my utility with my most recent POE Build! <button title="POE Sharing Code" onclick="copyCode()" class="copy_code canSelect">Try me !</button></p>
+                                <p><u>Deployment Link:</u> <a href="https://portfolio.yann-lindeboom.tech/PoeTradeHelper/" title="https://portfolio.yann-lindeboom.tech/PoeTradeHelper/" class="canSelect" target="_blank">Here</a></p>                                
+                                <p><u>Stack:</u> ReactJS</p>
+                                <img src="img/react.svg" alt="ReactJS" title="ReactJS"/>
+                                <p><u>Repository:</u> <a href="https://github.com/BadaboommS/PoeTradeHelper" title="https://github.com/BadaboommS/PoeTradeHelper" target="_blank">GitHub</a></p>
+                            </div>
+                        </div>
+                        <div id="modalBtn3" class="modalBtn card anim">
+                            <h3>Pokemon API</h3>
+                        </div>
+                        <!-- Modal 3 -->
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+                                <span id="modalClose3" class="modalClose">&times;</span>
+                                <h3>Pokemon API</h3>
+                                <p>- Definition of CRUD routes for pokemon related data management.</p>
+                                <p><u>Planned Upgrades:</u> Creating a VueJs Web app to utilize the API in Front.</p>
+                                <p><u>Stack:</u> NodeJS - Express</p>
+                                <p><u>Specifics:</u> MariaDB, Sequelize, SQL</p>
+                                <img src="img/nodejs-icon.svg" alt="NodeJS" title="NodeJS"/>
+                                <p><u>Deployment link:</u> Heroku (On hold)</p>
+                                <p><u>Repository:</u> <a href="https://github.com/BadaboommS/PokemonAPI" title="https://github.com/BadaboommS/PokemonAPI" class="canSelect" target="_blank">GitHub</a></p>
+                            </div>
+                        </div>
+                        <div id="modalBtn4" class="modalBtn card anim">
+                            <h3>Weather Tracking App</h3>
+                        </div>
+                        <!-- Modal 4 -->
+                        <div id="modal4" class="modal">
+                            <div class="modal-content">
+                                <span id="modalClose4" class="modalClose">&times;</span>
+                                <h3>Weather Tracking App</h3>
+                                <p>- Data fetching from american weather API and weather tracking.</p>
+                                <p><u>Planned Upgrades:</u> Adapt the App for french weather API.</p>
+                                <p><u>Stack:</u> VueJS</p>
+                                <img src="img/vue-icon.png" alt="VueJS" title="VueJS"/>
+                                <p><u>Deployment link:</u> <a href="https://weathertraining.onrender.com/" title="https://weathertraining.onrender.com/" class="canSelect" target="_blank">Here</a></p>
+                                <p><u>Repository:</u> <a href="https://github.com/BadaboommS/WeatherTraining" title="https://github.com/BadaboommS/WeatherTraining" target="_blank">GitHub</a></p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -88,6 +137,10 @@
                             <div>
                                 <img src="img/react.svg" alt="ReactJS" title="ReactJS"/>
                                 <p><strong>ReactJS</strong></p>
+                            </div>
+                            <div>
+                                <img src="img/nodejs-icon.svg" alt="NodeJS" title="NodeJS"/>
+                                <p><strong>NodeJS</strong></p>
                             </div>
                             <div>
                                 <img src="img/typescript.png" alt="Typescript" title="Typescript"/>
@@ -116,10 +169,10 @@
                     <div>
                         <h3>My socials</h3>
                         <div class="workLinks anim">
-                            <a href="https://www.linkedin.com/in/yann-lindeboom" class="canSelect" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/yann-lindeboom" class="canSelect" title="LinkedIn" target="_blank">
                                 <img src="img/linkedin.svg" alt="LinkedIn" width="70px"/>
                             </a>
-                            <a href="https://github.com/BadaboommS" class="canSelect" title="GitHub">
+                            <a href="https://github.com/BadaboommS" class="canSelect" title="GitHub" target="_blank">
                                 <img src="img/square-github.svg" alt="LinkedIn" width="70px"/>
                             </a>
                             <a href="mailto:yann.lindeboomm@gmail.com" class="canSelect" title="yann.lindeboomm@gmail.com">
@@ -134,9 +187,9 @@
                             <div class="pro_info">
                                 <div class="Resume anim">
                                     <h3>Resume</h3>
-                                    <a href="cv/YL_CV_Eng_FullStack.pdf" class="canSelect" title="Resume"><img src="img/file-solid.svg" width="50px"/></a>
-                                    <p>English version</p>
-                                    <a href="cv/YL_CV_FullStack.pdf" class="canSelect" title="CV"><img src="img/file-solid.svg" width="50px"/></a>
+                                    <!-- <a href="cv/YL_CV_Eng_FullStack.pdf" class="canSelect" title="Resume"><img src="img/file-solid.svg" width="50px"/></a>
+                                    <p>English version</p> -->
+                                    <a href="cv/YL_CV_FullStack_WCS.pdf" class="canSelect" title="CV" target="_blank"><img src="img/file-solid.svg" width="50px"/></a>
                                     <p>French version</p>
                                 </div>
                             </div>
