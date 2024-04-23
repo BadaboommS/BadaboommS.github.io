@@ -26,7 +26,6 @@ function isMobile() {
 
 if (!isMobile() && (window.screen.width > 768)) {
     var head = document.getElementsByTagName('head')[0];
-
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src =  'script/scroller.js';

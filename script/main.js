@@ -116,9 +116,11 @@ document.addEventListener("DOMContentLoaded", function(){
   // When the user clicks on the button, open the modal
   for(let i = 0; i < openBtnArray.length; i++){
     openBtnArray[i].onclick = function() {
-      gsap.to(window, { scrollTo: {y: projectPosition}});
+      if(!isMobile() && (window.screen.width > 768)){
+        gsap.to(window, { scrollTo: {y: projectPosition}});
+        nav.style.zIndex = "0";
+      }
       modals[i].style.display = "block";
-      nav.style.zIndex = "0";
       body.style.overflow = "hidden";
     }
   }
