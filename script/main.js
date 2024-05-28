@@ -118,9 +118,8 @@ document.addEventListener("DOMContentLoaded", function(){
     openBtnArray[i].onclick = function() {
       if(!isMobile() && (window.screen.width > 768)){
         gsap.to(window, { scrollTo: {y: projectPosition}});
-        nav.style.zIndex = "0";
       }
-      modals[i].style.display = "block";
+      modals[i].classList.remove("modal-hidden");
       body.style.overflow = "hidden";
     }
   }
@@ -128,8 +127,7 @@ document.addEventListener("DOMContentLoaded", function(){
   // When the user clicks on <span> (x), close the modal
   for(let i = 0; i < closeSpanArray.length; i++){
     closeSpanArray[i].onclick = function() {
-      modals[i].style.display = "none";
-      nav.style.zIndex = "1";
+      modals[i].classList.add("modal-hidden");
       body.style.overflow = "unset";
     }
   }
@@ -138,9 +136,8 @@ document.addEventListener("DOMContentLoaded", function(){
   window.onclick = function(event) {
     if (modalsArray.includes(event.target)) {
       modalsArray.forEach((modal) => {
-        modal.style.display = "none";
+        modal.classList.add("modal-hidden");
       })
-      nav.style.zIndex = "1";
       body.style.overflow = "unset";
     }
   }

@@ -30,5 +30,4 @@ if (!isMobile() && (window.screen.width > 768)) {
     script.type = 'text/javascript';
     script.src =  'script/scroller.js';
     head.appendChild(script);
-    console.log('Gsap scroller added !');
 }
