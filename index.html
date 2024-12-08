@@ -40,6 +40,11 @@
             </nav>
         </header>
         <main>
+            <div id="project_img_modal">
+                <span onclick="this.parentElement.style.display='none'" class="project_close_btn">&times;</span>
+                <img id="expandedImg" />
+                <div id="imgtext"></div>
+            </div>
             <div class="modal-container">
                 <!-- Modal 1 -->
                 <div id="modal1" class="modal modal-hidden">
@@ -50,6 +55,11 @@
                         <p>- CRUD routes and authorization management.</p>
                         <p><u>Stack:</u><span class="canSelect"> MERN (MongoDb, Express, ReactJs, Node.js) </span></p>
                         <img src='img/MERN.png' alt="MERN" title="MERN"/>
+                        <div class="modal-img">
+                            <img src="img/project_img/reservation_1.png" alt="Res 1" title="Site version desktop" onclick="projectModalOpen(this)"/>
+                            <img src="img/project_img/reservation_2.png" alt="Res 2" title="Site version mobile" onclick="projectModalOpen(this)"/>
+                            <img src="img/project_img/reservation_3.png" alt="Res 3" title="Dashboard mobile" onclick="projectModalOpen(this)"/>
+                        </div>
                     </div>
                 </div>
                 <!-- Modal 2 -->
@@ -62,6 +72,11 @@
                         <p><u>Deployment Link:</u> <a href="https://poetradehelper.onrender.com/" title="https://poetradehelper.onrender.com/" class="canSelect" target="_blank">Here</a></p>                                
                         <p><u>Stack:</u><span class="canSelect"> ReactJS </span> </p>
                         <img src="img/react.svg" alt="ReactJS" title="ReactJS"/>
+                        <div class="modal-img">
+                            <img src="img/project_img/poe_trade_1.png" alt="PoeTradeHelper 1" title="Utility App Desktop"  onclick="projectModalOpen(this)"/>
+                            <img src="img/project_img/poe_trade_2.png" alt="PoeTradeHelper 2" title="Utility App Mobile"  onclick="projectModalOpen(this)"/>
+                            <img src="img/project_img/poe_trade_3.png" alt="PoeTradeHelper 3" title="Utility App Desktop 2"  onclick="projectModalOpen(this)"/>
+                        </div>
                         <p><u>Repository:</u> <a href="https://github.com/BadaboommS/PoeTradeHelper" title="https://github.com/BadaboommS/PoeTradeHelper" target="_blank">GitHub</a></p>
                     </div>
                 </div>
@@ -75,6 +90,9 @@
                         <p><u>Stack:</u><span class="canSelect"> NodeJS - Express </span></p>
                         <p><u>Specifics:</u><span class="canSelect"> MariaDB, Sequelize, SQL </span></p>
                         <img src="img/nodejs-icon.svg" alt="NodeJS" title="NodeJS"/>
+                        <div class="modal-img">
+
+                        </div>
                         <p><u>Deployment link:</u> Heroku (On hold)</p>
                         <p><u>Repository:</u> <a href="https://github.com/BadaboommS/PokemonAPI" title="https://github.com/BadaboommS/PokemonAPI" class="canSelect" target="_blank">GitHub</a></p>
                     </div>
@@ -88,6 +106,9 @@
                         <p><u>Planned Upgrades:</u> Adapt the App for french weather API.</p>
                         <p><u>Stack:</u><span class="canSelect"> VueJS </span></p>
                         <img src="img/vue-icon.png" alt="VueJS" title="VueJS"/>
+                        <div class="modal-img">
+                            <img src="img/project_img/Weather_1.png" alt="Weather Tracking 1" title="Weather Tracking 1"  onclick="projectModalOpen(this)"/>
+                        </div>
                         <p><u>Deployment link:</u> <a href="https://weathertraining.onrender.com/" title="https://weathertraining.onrender.com/" class="canSelect" target="_blank">Here</a></p>
                         <p><u>Repository:</u> <a href="https://github.com/BadaboommS/WeatherTraining" title="https://github.com/BadaboommS/WeatherTraining" target="_blank">GitHub</a></p>
                     </div>
