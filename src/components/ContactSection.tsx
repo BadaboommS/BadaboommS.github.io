@@ -120,7 +120,7 @@ export default function ContactSection() {
         >
           <h3 className="text-xl md:text-2xl mb-2 text-white drop-shadow">Resume</h3>
           <a
-            href="cv/YL_CV.pdf"
+            href="cv/YL_CV_Dev.pdf"
             title="CV"
             target="_blank"
             rel="noopener noreferrer"
