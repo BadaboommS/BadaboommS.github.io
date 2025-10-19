@@ -22,7 +22,7 @@ export default function WhoSection() {
       className="w-screen min-h-screen flex items-center justify-center px-6 py-10"
     >
       <motion.div
-        className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full max-w-6xl bg-blue-900/30 backdrop-blur-lg border border-blue-400 rounded-xl p-8 md:p-12 shadow-lg perspective-1000"
+        className="flex flex-col md:flex-row items-center gap-4 md:gap-12 w-full max-w-6xl bg-blue-900/30 backdrop-blur-lg border border-blue-400 rounded-xl p-8 md:p-12 shadow-lg perspective-1000"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
@@ -69,7 +69,7 @@ export default function WhoSection() {
         </motion.div>
 
         {/* Texte */}
-        <motion.div className="flex flex-col gap-5 text-center md:text-left" variants={item}>
+        <motion.div className="flex flex-col gap-4 text-center md:text-left" variants={item}>
           <h3 className="text-2xl md:text-3xl font-semibold text-cyan-200 border-b border-cyan-400 pb-2 drop-shadow-lg relative inline-block">
             <motion.span
               className="absolute left-0 bottom-0 w-full h-1 bg-cyan-400 origin-left"
@@ -80,11 +80,11 @@ export default function WhoSection() {
             A Quick Introduction
           </h3>
 
-          <motion.p className="text-cyan-100 text-base md:text-lg leading-relaxed drop-shadow-md" variants={item}>
-            <span className="block mb-2">
+          <motion.p className="text-cyan-100 text-sm md:text-lg leading-relaxed drop-shadow-md" variants={item}>
+            <span className="block">
               Hi! My name is Yann Lindeboom. I recently committed to learning web development to fulfill my urge to learn.
             </span>
-            <span className="block mb-2">
+            <span className="block">
               I especially love experimenting and trying new ways to resolve problems!
             </span>
             <span className="block">

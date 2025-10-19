@@ -14,7 +14,7 @@ export default function MouseParticlesBG() {
 
     const particles: { x: number; y: number; vx: number; vy: number; size: number }[] = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -24,16 +24,28 @@ export default function MouseParticlesBG() {
       });
     }
 
-    let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    // mouse peut être null si pas de souris ni de touch
+    let mouse: { x: number; y: number } | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouse = { x: e.clientX, y: e.clientY };
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      mouse = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const handleTouchEnd = () => {
+      mouse = null; // on relâche l'attraction si plus de doigt sur l'écran
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchstart", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
 
     const animate = () => {
-      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((p) => {
@@ -44,14 +56,16 @@ export default function MouseParticlesBG() {
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        // attracteur vers la souris
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
+        // attraction vers mouse si défini
+        if (mouse) {
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
             const force = 0.002;
             p.vx += dx * force;
             p.vy += dy * force;
+          }
         }
 
         ctx.beginPath();
@@ -65,7 +79,12 @@ export default function MouseParticlesBG() {
 
     animate();
 
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchstart", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
   }, []);
 
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />;
