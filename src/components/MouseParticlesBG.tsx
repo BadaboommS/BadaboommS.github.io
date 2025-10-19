@@ -1,7 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 export default function MouseParticlesBG() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  const isMobile = useMemo(() => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent), []);
+  const particuleAmount = isMobile ? 20 : 80;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -14,7 +17,7 @@ export default function MouseParticlesBG() {
 
     const particles: { x: number; y: number; vx: number; vy: number; size: number }[] = [];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < particuleAmount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -24,26 +27,13 @@ export default function MouseParticlesBG() {
       });
     }
 
-    // mouse peut être null si pas de souris ni de touch
     let mouse: { x: number; y: number } | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouse = { x: e.clientX, y: e.clientY };
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      const touch = e.touches[0];
-      mouse = { x: touch.clientX, y: touch.clientY };
-    };
-
-    const handleTouchEnd = () => {
-      mouse = null; // on relâche l'attraction si plus de doigt sur l'écran
-    };
-
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchstart", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -52,12 +42,10 @@ export default function MouseParticlesBG() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // rebond sur les bords
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        // attraction vers mouse si défini
-        if (mouse) {
+        if (!isMobile && mouse) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -81,9 +69,6 @@ export default function MouseParticlesBG() {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchstart", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
