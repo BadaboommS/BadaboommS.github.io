@@ -88,7 +88,13 @@ export default function WhoSection() {
               I especially love experimenting and trying new ways to resolve problems!
             </span>
             <span className="block">
-              I build websites with the holy trinity HTML - CSS - JS, but I recently got into using more specific tools like React JS, SASS and GSAP for animations!
+              I can build websites with the holy trinity HTML - CSS - JS, but i can also use some popular framework like ReactJS, Vue, or Angular.
+            </span>
+            <span className="block">
+              In the future i plan to expand my understanding of certain topics like backend technologies, CI/CD, Low Level programming or Cyber Security practices.
+            </span>
+            <span className="block">
+              I also recently got into using more specific tools like GSAP and Motion for fun animations!
             </span>
           </motion.p>
         </motion.div>

@@ -19,6 +19,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Property reservation management website",
     description: [
+      "- For personal use -",
       "- API request management and front-end interactivity.",
       "- CRUD routes and authorization management.",
     ],
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Utility app for a video game",
     description: [
+      "- Training Purpose & for personal use -",
       "- Processing and manipulation of encrypted data to generate a customised interface and queries for Path Of Exile trading site.",
       "You can try my utility with my most recent POE Build!",
     ],
@@ -62,6 +64,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Password Management App",
     description: [
+      "- Training Purpose -",
       "Electron JS App for password management.",
       "Data are locally stored and encrypted using OS-based techniques.",
       "Electron multi-process management and inter-process communication with a secure internal API.",
@@ -76,14 +79,17 @@ export const projects: Project[] = [
     links: [
       { label: "View Repository", url: "https://github.com/BadaboommS/Password_Manager" },
     ],
-    gallery: [],
+    gallery: [
+      { src: "/img/project_img/Pwd_Manager_1.png", alt: "Pwd Manager 1"}
+    ],
   },
   {
     id: 4,
     title: "Scientific Spatial Cell Analysis App",
     description: [
-      "- Internship at Mantalys.",
-      "- Most work done in Front-end and test development."
+      "- Internship at Mantalys -",
+      "- Front end development using Vue and deckGL.",
+      "- Tauri Webapp automatic testing planning using playwright."
     ],
     stack: "VueJS, PrimeVue, Playwright, DeckGl",
     img: [
@@ -103,7 +109,7 @@ export const projects: Project[] = [
     id: 5,
     title: "Gameboy Emulator",
     description: [
-      "- Personal Training Project in C.",
+      "- Training Purpose -",
       "- Based on guide provided by Low Level Devel.",
       "- My Objective was to develop my understanding of low level programming and to upgrade my code formating and project structure skills.",
     ],
@@ -121,6 +127,7 @@ export const projects: Project[] = [
     id: 6,
     title: "Weather Tracking App",
     description: [
+      "- Training Purpose -",
       "- Data fetching from an American weather API and weather tracking.",
       "- Planned Upgrade: adapt the app for French weather APIs.",
     ],

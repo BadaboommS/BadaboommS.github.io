@@ -6,7 +6,7 @@ export default function ProjectsSection() {
   const [expandedImg, setExpandedImg] = useState<string | null>(null);
   const [hoverBg, setHoverBg] = useState<string | null>(null);
   const [prevBg, setPrevBg] = useState<string | null>(null);
-  const [visibleBg, setVisibleBg] = useState<string | null>(null); // ← gère l'opacité du fond
+  const [visibleBg, setVisibleBg] = useState<string | null>(null);
 
   const handleMouseEnter = (bg: string | null) => {
     if (bg !== hoverBg) {
@@ -15,11 +15,10 @@ export default function ProjectsSection() {
     }
   };
 
-  // 🔥 Transition fluide à chaque changement d’image
   useEffect(() => {
     if (hoverBg) {
-      setVisibleBg(null); // reset avant d'afficher
-      const t = setTimeout(() => setVisibleBg(hoverBg), 50); // léger délai => déclenche bien la transition
+      setVisibleBg(null);
+      const t = setTimeout(() => setVisibleBg(hoverBg), 50);
       return () => clearTimeout(t);
     } else {
       setVisibleBg(null);
@@ -30,7 +29,6 @@ export default function ProjectsSection() {
     <div className="relative px-4 py-8 overflow-hidden">
       {/* Fond animé */}
       <div className="fixed inset-0 z-0">
-        {/* Ancienne image : fade-out */}
         {prevBg && (
           <div
             key={prevBg}
@@ -39,7 +37,6 @@ export default function ProjectsSection() {
             onTransitionEnd={() => setPrevBg(null)}
           />
         )}
-        {/* Nouvelle image : fade-in contrôlé */}
         {hoverBg && (
           <div
             key={hoverBg}
@@ -82,11 +79,11 @@ export default function ProjectsSection() {
         </div>
       )}
 
-      {/* Modals */}
+      {/* Modals (dark) */}
       {projects.map((project) => (
         <div
           key={project.id}
-          className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm z-40 transition-opacity duration-300 ${
             activeModal === project.id
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
@@ -94,41 +91,70 @@ export default function ProjectsSection() {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-white text-black border border-gray-300 rounded-lg w-[90%] max-w-3xl p-6 md:p-8 text-left relative shadow-xl flex flex-col gap-4 font-mono"
+            className="relative w-[90%] max-w-3xl rounded-2xl border border-cyan-700/30 shadow-[0_0_25px_rgba(0,255,255,0.12)]
+                        bg-gradient-to-br from-[#0d1117] to-[#0f1724] text-gray-200 p-6 md:p-8
+                        flex flex-col gap-5 font-mono transition-transform duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-2 right-4 text-gray-400 hover:text-black text-3xl font-bold transition"
+              className="absolute top-3 right-5 text-gray-400 hover:text-cyan-400 text-3xl font-bold transition"
               onClick={() => setActiveModal(null)}
             >
               &times;
             </button>
 
-            <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold text-center text-cyan-300 drop-shadow-[0_0_6px_rgba(0,255,255,0.25)]">
               {project.title}
             </h3>
 
             {project.description.map((desc, i) => (
-              <p key={i} className="text-sm md:text-base leading-relaxed">
+              <p key={i} className="text-sm md:text-base leading-relaxed text-gray-300">
                 {desc}
               </p>
             ))}
 
             {project.stack && (
-              <p className="mt-2">
-                <span className="font-semibold underline">Stack:</span>{" "}
+              <p className="mt-2 text-gray-300 text-center">
+                <span className="font-semibold text-cyan-400">Stack:</span>{" "}
                 <span className="font-mono select-text">{project.stack}</span>
               </p>
             )}
 
+            {/* Images de stack centrées + fond clair */}
+            {project.img && project.img.length > 0 && (
+              <div className="flex flex-wrap justify-center gap-4 mt-3 pb-2">
+                {project.img.map((imgObj, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center text-center p-2 rounded-xl 
+                               bg-gray-100/10 shadow-inner shadow-cyan-900/20 
+                               backdrop-blur-sm min-w-[80px]"
+                  >
+                    <img
+                      src={imgObj.src}
+                      alt={imgObj.alt}
+                      className="h-[48px] w-[48px] md:h-[64px] md:w-[64px] rounded-md object-contain"
+                      title={imgObj.alt}
+                    />
+                    {imgObj.alt && (
+                      <span className="text-[11px] text-gray-400 mt-1 max-w-[80px] truncate">
+                        {imgObj.alt}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
             {project.gallery && project.gallery.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto justify-center mt-4">
+              <div className="flex gap-2 overflow-x-auto justify-center mt-4 pb-2">
                 {project.gallery.map((img, idx) => (
                   <img
                     key={idx}
                     src={img.src}
                     alt={img.alt}
-                    className="h-[80px] md:h-[100px] rounded-md shadow cursor-pointer flex-shrink-0"
+                    className="h-[80px] md:h-[100px] rounded-md shadow-md flex-shrink-0 cursor-pointer
+                               hover:shadow-[0_0_10px_rgba(0,255,255,0.18)] transition"
                     onClick={() => setExpandedImg(img.src)}
                   />
                 ))}
