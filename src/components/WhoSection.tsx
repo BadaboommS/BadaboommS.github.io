@@ -41,6 +41,7 @@ export default function WhoSection() {
             className="absolute w-full h-full rounded-full border-4 border-blue-400 shadow-md object-cover backface-hidden"
             variants={item}
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,255,255,0.6)" }}
+            initial={{ rotateY: 0 }}
             animate={{ rotateY: flipped ? 180 : 0 }}
             transition={{ duration: 1, type: "spring", stiffness: 200, damping: 20 }}
             style={{ transformStyle: "preserve-3d" }}
@@ -49,6 +50,7 @@ export default function WhoSection() {
           {/* Back face avec image et texte */}
           <motion.div
             className="absolute w-full h-full rounded-full backface-hidden overflow-hidden"
+            initial={{ rotateY: -180 }}
             animate={{ rotateY: flipped ? 0 : -180 }}
             transition={{ duration: 1, type: "spring", stiffness: 200, damping: 20 }}
             style={{ transformStyle: "preserve-3d" }}

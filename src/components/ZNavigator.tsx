@@ -33,14 +33,14 @@ export default function ZNavigator({ children }: ZNavigatorProps) {
   const variants: Variants = useMemo(() => ({
     enter: (dir: number) =>
       isMobile
-        ? { scale: dir === 1 ? 0.7 : 1.3, opacity: 0, y: dir === 1 ? 100 : -100 }
+        ? { opacity: 0, y: dir === 1 ? 50 : -50 }
         : { scale: dir === 1 ? 0.7 : 1.3, opacity: 0, translateZ: dir === 1 ? 200 : -200 },
     center: isMobile
-      ? { scale: 1, opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] } }
+      ? { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
       : { scale: 1, opacity: 1, translateZ: 0, transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] } },
     exit: (dir: number) =>
       isMobile
-        ? { scale: dir === 1 ? 1.3 : 0.7, opacity: 0, y: dir === 1 ? -100 : 100, transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] } }
+        ? { opacity: 0, y: dir === 1 ? -50 : 50, transition: { duration: 0.4, ease: "easeOut" } }
         : { scale: dir === 1 ? 1.3 : 0.7, opacity: 0, translateZ: dir === 1 ? -200 : 200, transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] } },
   }), [isMobile]);
 
