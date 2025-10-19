@@ -33,25 +33,30 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                      flex flex-col gap-5 font-mono transition-transform duration-300"
           onClick={(e) => e.stopPropagation()}
         >
-          <button
-            className="absolute top-3 right-5 text-gray-400 hover:text-cyan-400 text-3xl font-bold transition"
-            onClick={onClose}
-          >
-            &times;
-          </button>
+          <div className="flex items-center justify-between w-full">
+            <h3 className="flex-1 text-xl md:text-2xl lg:text-3xl font-semibold text-center text-cyan-300 drop-shadow-[0_0_6px_rgba(0,255,255,0.25)] whitespace-nowrap overflow-hidden truncate">
+              {project.title}
+            </h3>
 
-          <h3 className="text-2xl md:text-3xl font-semibold text-center text-cyan-300 drop-shadow-[0_0_6px_rgba(0,255,255,0.25)]">
-            {project.title}
-          </h3>
+            <button
+              className="text-4xl md:text-3xl text-gray-400 hover:text-cyan-400 font-bold transition p-2 md:p-0 rounded-full"
+              onClick={onClose}
+            >
+              &times;
+            </button>
+          </div>
 
           {project.description.map((desc, i) => (
-            <p key={i} className="text-sm md:text-base leading-relaxed text-gray-300">
+            <p
+              key={i}
+              className="text-sm md:text-base leading-snug md:leading-relaxed text-gray-300"
+            >
               {desc}
             </p>
           ))}
 
           {project.stack && (
-            <p className="mt-2 text-gray-300 text-center">
+            <p className="mt-2 text-gray-300 text-sm md:text-lg text-center">
               <span className="font-semibold text-cyan-400">Stack:</span>{" "}
               <span className="font-mono select-text">{project.stack}</span>
             </p>
@@ -59,13 +64,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Images de stack */}
           {project.img && project.img.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-4 mt-3 pb-2">
+            <div className="flex flex-nowrap justify-start md:justify-center overflow-x-auto justify-start gap-4 mt-3 pb-2">
               {project.img.map((imgObj, idx) => (
                 <div
                   key={idx}
                   className="flex flex-col items-center text-center p-2 rounded-xl 
-                             bg-gray-100/10 shadow-inner shadow-cyan-900/20 
-                             backdrop-blur-sm min-w-[80px]"
+                            bg-gray-100/10 shadow-inner shadow-cyan-900/20 
+                            backdrop-blur-sm min-w-[80px] flex-shrink-0"
                 >
                   <img
                     src={imgObj.src}
@@ -85,7 +90,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Gallery */}
           {project.gallery && project.gallery.length > 0 && (
-            <div className="flex gap-2 overflow-x-auto justify-center mt-4 pb-2">
+            <div className="flex gap-2 justify-start md:justify-center overflow-x-auto justify-center mt-4 pb-2">
               {project.gallery.map((img, idx) => (
                 <img
                   key={idx}
