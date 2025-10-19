@@ -1,25 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "../constants/projects";
 
 export default function ProjectsSection() {
   const [activeModal, setActiveModal] = useState<number | string | null>(null);
   const [expandedImg, setExpandedImg] = useState<string | null>(null);
   const [hoverBg, setHoverBg] = useState<string | null>(null);
+  const [prevBg, setPrevBg] = useState<string | null>(null);
+  const [visibleBg, setVisibleBg] = useState<string | null>(null); // ← gère l'opacité du fond
+
+  const handleMouseEnter = (bg: string | null) => {
+    if (bg !== hoverBg) {
+      setPrevBg(hoverBg);
+      setHoverBg(bg);
+    }
+  };
+
+  // 🔥 Transition fluide à chaque changement d’image
+  useEffect(() => {
+    if (hoverBg) {
+      setVisibleBg(null); // reset avant d'afficher
+      const t = setTimeout(() => setVisibleBg(hoverBg), 50); // léger délai => déclenche bien la transition
+      return () => clearTimeout(t);
+    } else {
+      setVisibleBg(null);
+    }
+  }, [hoverBg]);
 
   return (
-    <div className="relative px-4 py-8">
-      {/* Background dynamique */}
-      <div
-        className={`fixed inset-0 z-0 transition-all duration-500 bg-center bg-cover opacity-10`}
-        style={{ backgroundImage: hoverBg ? `url(${hoverBg})` : "none" }}
-      ></div>
+    <div className="relative px-4 py-8 overflow-hidden">
+      {/* Fond animé */}
+      <div className="fixed inset-0 z-0">
+        {/* Ancienne image : fade-out */}
+        {prevBg && (
+          <div
+            key={prevBg}
+            className="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-700"
+            style={{ backgroundImage: `url(${prevBg})` }}
+            onTransitionEnd={() => setPrevBg(null)}
+          />
+        )}
+        {/* Nouvelle image : fade-in contrôlé */}
+        {hoverBg && (
+          <div
+            key={hoverBg}
+            className={`absolute inset-0 bg-center bg-cover transition-opacity duration-700 ${
+              visibleBg ? "opacity-10" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${hoverBg})` }}
+          />
+        )}
+      </div>
 
-      <h2 className="text-4xl md:text-5xl font-mono text-white text-center mb-12 relative inline-block">
+      <h2 className="text-4xl md:text-5xl font-mono text-white text-center mb-12 relative inline-block z-10">
         My Projects
         <span className="absolute left-0 -bottom-2 w-full h-1 bg-cyan-500 rounded-full animate-scaleX origin-left"></span>
       </h2>
 
-      {/* Expanded Image Fullscreen */}
+      {/* Expanded Image */}
       {expandedImg && (
         <div
           className="fixed inset-0 bg-black bg-opacity-95 flex justify-center items-center z-50 p-4 transition-opacity duration-300"
@@ -84,21 +121,6 @@ export default function ProjectsSection() {
               </p>
             )}
 
-            {/* Stack Images */}
-            {project.img && project.img.length > 0 && (
-              <div className="flex gap-4 overflow-x-auto justify-center my-4">
-                {project.img.map((imgObj, idx) => (
-                  <img
-                    key={idx}
-                    src={imgObj.src}
-                    alt={imgObj.alt}
-                    className="h-[80px] md:h-[100px] rounded-md shadow flex-shrink-0"
-                  />
-                ))}
-              </div>
-            )}
-
-            {/* Gallery Images */}
             {project.gallery && project.gallery.length > 0 && (
               <div className="flex gap-2 overflow-x-auto justify-center mt-4">
                 {project.gallery.map((img, idx) => (
@@ -112,28 +134,11 @@ export default function ProjectsSection() {
                 ))}
               </div>
             )}
-
-            {/* Links Table */}
-            {project.links && project.links.length > 0 && (
-              <div className="mt-4 flex flex-col md:flex-row justify-center gap-4 text-center">
-                {project.links.map((link, idx) => (
-                  <a
-                    key={idx}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 font-semibold hover:underline"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       ))}
 
-      {/* Project Buttons */}
+      {/* Boutons projets */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 relative z-10">
         {projects.map((project) => {
           const hoverImage =
@@ -145,8 +150,8 @@ export default function ProjectsSection() {
             <button
               key={project.id}
               onClick={() => setActiveModal(project.id)}
-              onMouseEnter={() => setHoverBg(hoverImage)}
-              onMouseLeave={() => setHoverBg(null)}
+              onMouseEnter={() => handleMouseEnter(hoverImage)}
+              onMouseLeave={() => handleMouseEnter(null)}
               className="w-full bg-blue-600 text-white px-4 py-2 md:px-6 md:py-4 lg:px-8 lg:py-5 rounded-lg shadow-md hover:scale-105 transition-transform font-semibold text-left relative overflow-hidden"
             >
               {project.title}
@@ -155,7 +160,6 @@ export default function ProjectsSection() {
         })}
       </div>
 
-      {/* Animation keyframes */}
       <style>
         {`
         @keyframes scaleFadeIn {
