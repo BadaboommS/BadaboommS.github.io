@@ -9,7 +9,7 @@ export interface Project {
   description: string[];
   stack?: string;
   specifics?: string;
-  img?: { src: string; alt: string }[] | null;
+  img?: { src: string; alt: string }[];
   links?: ProjectLink[]; // remplace link/repo par un tableau
   gallery?: { src: string; alt: string }[];
 }
@@ -35,9 +35,9 @@ export const projects: Project[] = [
       { label: "View Repository", url: "https://github.com/BadaboommS/ReservationProject" },
     ],
     gallery: [
-      { src: "/img/project_img/reservation_1.png", alt: "Reservation Desktop" },
-      { src: "/img/project_img/reservation_2.png", alt: "Reservation Mobile" },
-      { src: "/img/project_img/reservation_3.png", alt: "Reservation Dashboard" },
+      { src: "/img/project_img/reservation_1.webp", alt: "Reservation Desktop" },
+      { src: "/img/project_img/reservation_2.webp", alt: "Reservation Mobile" },
+      { src: "/img/project_img/reservation_3.webp", alt: "Reservation Dashboard" },
     ],
   },
   {
@@ -55,9 +55,9 @@ export const projects: Project[] = [
       { label: "View Repository", url: "https://github.com/BadaboommS/PoeTradeHelper" },
     ],
     gallery: [
-      { src: "/img/project_img/poe_trade_1.png", alt: "PoeTradeHelper Desktop" },
-      { src: "/img/project_img/poe_trade_2.png", alt: "PoeTradeHelper Mobile" },
-      { src: "/img/project_img/poe_trade_3.png", alt: "PoeTradeHelper Dashboard" },
+      { src: "/img/project_img/poe_trade_1.webp", alt: "PoeTradeHelper Desktop" },
+      { src: "/img/project_img/poe_trade_2.webp", alt: "PoeTradeHelper Mobile" },
+      { src: "/img/project_img/poe_trade_3.webp", alt: "PoeTradeHelper Dashboard" },
     ],
   },
   {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
       { label: "View Repository", url: "https://github.com/BadaboommS/Password_Manager" },
     ],
     gallery: [
-      { src: "/img/project_img/Pwd_Manager_1.png", alt: "Pwd Manager 1"}
+      { src: "/img/project_img/Pwd_Manager_1.webp", alt: "Pwd Manager 1"}
     ],
   },
   {
@@ -101,8 +101,8 @@ export const projects: Project[] = [
       { label: "Company Website", url: "https://mantalys.fr/" },
     ],
     gallery: [
-      { src: "/img/project_img/mantaplex_1.png", alt: "Mantaplex 1" },
-      { src: "/img/project_img/mantaplex_2.png", alt: "Mantaplex 2" },
+      { src: "/img/project_img/mantaplex_1.webp", alt: "Mantaplex 1" },
+      { src: "/img/project_img/mantaplex_2.webp", alt: "Mantaplex 2" },
     ],
   },
   {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       { label: "Guide Source", url: "https://www.youtube.com/@lowleveldevel1712" },
     ],
     gallery: [
-      { src: "/img/project_img/GB_Emu.png", alt: "GBEmu" },
+      { src: "/img/project_img/GB_Emu.webp", alt: "GBEmu" },
     ],
   },
   {
@@ -138,7 +138,7 @@ export const projects: Project[] = [
       { label: "View Repository", url: "https://github.com/BadaboommS/WeatherTraining" },
     ],
     gallery: [
-      { src: "/img/project_img/Weather_1.png", alt: "Weather Tracking Screenshot" },
+      { src: "/img/project_img/Weather_1.webp", alt: "Weather Tracking Screenshot" },
     ],
   },
 ];
