@@ -72,7 +72,7 @@ export const projects: Project[] = [
     stack: "React Electron Tailwind Typescript",
     img: [
       { src: "/img/react.svg", alt: "ReactJS" },
-      { src: "/img/electron_icon.png", alt: "Electron" },
+      { src: "/img/electron_icon.webp", alt: "Electron" },
       { src: "/img/tailwind.svg", alt: "Tailwind" },
       { src: "/img/TS_Logo.svg", alt: "Typescript" },
     ],

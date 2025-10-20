@@ -36,7 +36,7 @@ export default function WhoSection() {
         >
           {/* Front face */}
           <motion.img
-            src="../img/IMG_2404.jpg"
+            src="../img/IMG_2404.webp"
             alt="It's me!"
             className="absolute w-full h-full rounded-full border-4 border-blue-400 shadow-md object-cover backface-hidden"
             variants={item}
@@ -57,7 +57,7 @@ export default function WhoSection() {
           >
             {/* Image de fond */}
             <img
-              src="../img/yes.png" // remplace par ton image
+              src="../img/yes.webp" // remplace par ton image
               alt="Back"
               className="w-full h-full object-cover"
             />

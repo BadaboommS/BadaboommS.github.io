@@ -7,9 +7,9 @@ export default function SkillsSection() {
       className="panel flex flex-col items-center justify-start w-screen px-4 py-4 bg-transparent
                  max-h-screen overflow-auto"
     >
-      <div className="w-full max-w-6xl flex flex-col gap-4 sm:gap-5 md:gap-6">
+      <div className="w-full max-w-6xl flex flex-col gap-4 px-8 md:px-4 lg:px-0 sm:gap-5 md:gap-6">
         {skills.map((category, idx) => (
-          <div key={idx} className="flex flex-col items-center w-full">
+          <div key={idx} className="flex flex-col gap-2 items-center w-full">
             <h3 className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mb-2 sm:mb-3 drop-shadow-lg text-center">
               {category.name}
             </h3>
