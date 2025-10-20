@@ -26,7 +26,6 @@ export default function SkillsSection() {
                     <img
                       src={item.img}
                       alt={item.name}
-                      title={item.name}
                       className="w-[30px] sm:w-[40px] md:w-[60px] lg:w-[80px] xl:w-[90px]
                                  h-[30px] sm:h-[40px] md:h-[60px] lg:h-[80px] xl:h-[90px]
                                  object-contain"
