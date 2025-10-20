@@ -56,7 +56,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           ))}
 
           {project.stack && (
-            <p className="mt-2 text-gray-300 text-sm md:text-lg text-center">
+            <p className="mt-2 text-gray-300 text-sm md:text-lg text-start">
               <span className="font-semibold text-cyan-400">Stack:</span>{" "}
               <span className="font-mono select-text">{project.stack}</span>
             </p>
@@ -64,7 +64,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Images de stack */}
           {project.img && project.img.length > 0 && (
-            <div className="flex flex-nowrap justify-start md:justify-center overflow-x-auto justify-start gap-4 mt-3 pb-2">
+            <div className="hidden lg:flex flex-nowrap justify-start md:justify-center overflow-x-auto justify-start gap-4 mt-3 pb-2">
               {project.img.map((imgObj, idx) => (
                 <div
                   key={idx}

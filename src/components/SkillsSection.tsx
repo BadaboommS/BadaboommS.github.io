@@ -14,11 +14,11 @@ export default function SkillsSection() {
               {category.name}
             </h3>
 
-            <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-2 w-full justify-items-center">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-2 gap-y-2 w-full justify-items-center">
               {category.items.map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-center gap-1 p-2 sm:p-2.5 md:p-3 rounded-lg
+                  className="flex flex-col items-center justify-center gap-1 p-1 md:p-2 rounded-lg
                              transition-transform hover:scale-105 w-full max-w-[140px]
                              bg-gray-700/60 hover:bg-gray-600/60 backdrop-blur-md"
                 >
