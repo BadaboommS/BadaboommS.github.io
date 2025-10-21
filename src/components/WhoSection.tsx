@@ -28,13 +28,11 @@ export default function WhoSection() {
         viewport={{ once: true, amount: 0.3 }}
         variants={container}
       >
-        {/* Image avec backflip */}
         <motion.div
           className="relative w-40 h-40 md:w-64 md:h-64 cursor-pointer"
           onClick={() => setFlipped(!flipped)}
           style={{ perspective: 1000 }}
         >
-          {/* Front face */}
           <motion.img
             src="../img/IMG_2404.webp"
             alt="It's me!"
@@ -47,7 +45,6 @@ export default function WhoSection() {
             style={{ transformStyle: "preserve-3d" }}
           />
 
-          {/* Back face avec image et texte */}
           <motion.div
             className="absolute w-full h-full rounded-full backface-hidden overflow-hidden"
             initial={{ rotateY: -180 }}
@@ -55,13 +52,11 @@ export default function WhoSection() {
             transition={{ duration: 1, type: "spring", stiffness: 200, damping: 20 }}
             style={{ transformStyle: "preserve-3d" }}
           >
-            {/* Image de fond */}
             <img
-              src="../img/yes.webp" // remplace par ton image
+              src="../img/yes.webp"
               alt="Back"
               className="w-full h-full object-cover"
             />
-            {/* Overlay semi-transparent pour texte */}
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 rounded-full">
               <p className="text-white text-xs md:text-sm lg:text-base text-center font-semibold drop-shadow-md leading-snug">
                 Stop right there, criminal scum! nobody breaks the law on my watch, i'm confiscating your stolen goods, now pay your fine, or it's off to jail !
@@ -70,7 +65,6 @@ export default function WhoSection() {
           </motion.div>
         </motion.div>
 
-        {/* Texte */}
         <motion.div className="flex flex-col gap-4 text-center md:text-left" variants={item}>
           <h3 className="text-2xl md:text-3xl font-semibold text-cyan-200 border-b border-cyan-400 pb-2 drop-shadow-lg relative inline-block">
             <motion.span

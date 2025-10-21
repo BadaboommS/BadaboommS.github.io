@@ -24,7 +24,6 @@ export default function HomeSection() {
         animate="show"
         variants={container}
       >
-        {/* Nom avec hover glow/scale fluide */}
         <motion.h2
           className="drop-shadow-lg font-chalk text-2xl sm:text-[clamp(2rem,6vw,5rem)] leading-snug sm:leading-tight"
           variants={item}
@@ -49,7 +48,6 @@ export default function HomeSection() {
           </motion.strong>
         </motion.h2>
 
-        {/* Sous-titre avec légère entrée et pulse */}
         <motion.h3
           className="text-lg sm:text-[clamp(1.5rem,4vw,2.5rem)] leading-relaxed sm:leading-snug mt-4 sm:mt-6 max-w-[90%] sm:max-w-[80%] drop-shadow-lg select-none"
           variants={item}
@@ -63,7 +61,6 @@ export default function HomeSection() {
           Either way, welcome to my site!
         </motion.h3>
 
-        {/* Scroll indicator animé */}
         <motion.div
           className="mt-6 sm:mt-10 px-4 py-2 sm:px-6 sm:py-3 text-cyan-400 font-mono text-lg sm:text-2xl select-none"
           whileHover={{ scale: 1.03, rotate: 1 }}

@@ -1,7 +1,6 @@
-// Définition des types
 export interface SkillItem {
   name: string;
-  img?: string | null; // img optionnel
+  img?: string | null;
 }
 
 export interface SkillCategory {

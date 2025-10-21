@@ -29,7 +29,6 @@ export default function ProjectsSection() {
 
   return (
     <div className="relative px-4 py-8 overflow-hidden">
-      {/* Fond animé */}
       <div className="fixed inset-0 z-0">
         {prevBg && (
           <div
@@ -55,7 +54,6 @@ export default function ProjectsSection() {
         <span className="absolute left-0 -bottom-2 w-full h-1 bg-cyan-500 rounded-full animate-scaleX origin-left"></span>
       </h2>
 
-      {/* Boutons projets */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 relative z-10">
         {projects.map((project) => {
           const hoverImage =

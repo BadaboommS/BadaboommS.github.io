@@ -21,12 +21,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <>
-      {/* Overlay */}
       <div
         className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm z-40 transition-opacity duration-300"
         onClick={onClose}
       >
-        {/* Modal content */}
         <div
           className="relative w-[90%] max-w-3xl rounded-2xl border border-cyan-700/30 shadow-[0_0_25px_rgba(0,255,255,0.12)]
                      bg-gradient-to-br from-[#0d1117] to-[#0f1724] text-gray-200 p-6 md:p-8
@@ -62,7 +60,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </p>
           )}
 
-          {/* Images de stack */}
           {project.img && project.img.length > 0 && (
             <div className="hidden xl:flex flex-nowrap justify-start md:justify-center overflow-x-auto justify-start gap-4 mt-3 pb-2">
               {project.img.map((imgObj, idx) => (
@@ -88,7 +85,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* Gallery */}
           {project.gallery && project.gallery.length > 0 && (
             <div className="flex gap-2 justify-start md:justify-center overflow-x-auto justify-center mt-4 pb-2">
               {project.gallery.map((img, idx) => (
@@ -106,7 +102,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
       </div>
 
-      {/* Expanded Image */}
       {expandedImg && (
         <div
           className="fixed inset-0 bg-black bg-opacity-95 flex justify-center items-center z-50 p-4 transition-opacity duration-300"

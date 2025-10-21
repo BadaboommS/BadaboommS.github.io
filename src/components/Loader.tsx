@@ -1,4 +1,3 @@
-// Loader.tsx
 import { motion } from "framer-motion";
 
 export default function Loader() {
@@ -8,14 +7,12 @@ export default function Loader() {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: 'easeInOut' } }}
     >
-      {/* Cercle de chargement */}
       <motion.div
         className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full"
         animate={{ rotate: 360 }}
         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
       />
       
-      {/* Texte animé */}
       <motion.h2
         className="mt-6 text-cyan-400 text-xl font-mono tracking-widest"
         initial={{ opacity: 0 }}

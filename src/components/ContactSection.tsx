@@ -2,6 +2,8 @@ import { easeInOut, motion, type Variants } from "framer-motion";
 import { useState } from "react";
 
 export default function ContactSection() {
+  const [statusHover, setStatusHover] = useState(false);
+  
   const container: Variants = {
     show: { transition: { staggerChildren: 0.2 } },
   };
@@ -25,8 +27,6 @@ export default function ContactSection() {
     boxShadow: ["0 0 0px #0ff", "0 0 10px #0ff", "0 0 5px #0ff", "0 0 10px #0ff", "0 0 0px #0ff"],
   };
 
-  // state pour savoir si le bloc Status est survolé
-  const [statusHover, setStatusHover] = useState(false);
 
   const socials = [
     { href: "https://www.linkedin.com/in/yann-lindeboom", img: "/img/linkedin.svg", alt: "LinkedIn", title: "LinkedIn" },
@@ -50,7 +50,6 @@ export default function ContactSection() {
         Want to contact me?
       </motion.h2>
 
-      {/* Socials */}
       <motion.div
         className="mb-10"
         variants={container}
@@ -89,14 +88,12 @@ export default function ContactSection() {
         </motion.div>
       </motion.div>
 
-      {/* Status & Resume */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-10"
         variants={container}
         initial={false}
         animate="show"
       >
-        {/* Status */}
         <motion.div
           className="flex flex-col items-center bg-white/20 backdrop-blur-md p-4 rounded-lg cursor-pointer"
           variants={item}
@@ -111,7 +108,6 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        {/* Resume */}
         <motion.div
           className="flex flex-col items-center bg-white/20 backdrop-blur-md p-4 rounded-lg"
           variants={item}

@@ -1,6 +1,6 @@
 export interface ProjectLink {
-  label: string; // texte à afficher
-  url: string;   // lien
+  label: string;
+  url: string;
 }
 
 export interface Project {
@@ -10,7 +10,7 @@ export interface Project {
   stack?: string;
   specifics?: string;
   img?: { src: string; alt: string }[];
-  links?: ProjectLink[]; // remplace link/repo par un tableau
+  links?: ProjectLink[];
   gallery?: { src: string; alt: string }[];
 }
 
