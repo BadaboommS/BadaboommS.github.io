@@ -6,6 +6,7 @@ interface Project {
   description: string[];
   stack?: string;
   img?: { src: string; alt: string }[];
+  links?: { label: string; href: string }[];
   gallery?: { src: string; alt: string }[];
 }
 
@@ -81,6 +82,25 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </span>
                   )}
                 </div>
+              ))}
+            </div>
+          )}
+
+          {project.links && project.links.length > 0 && (
+            <div className="flex flex-wrap gap-3 justify-center mt-2">
+              {project.links.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg border border-cyan-500/30
+                            bg-cyan-500/10 text-cyan-300
+                            hover:bg-cyan-500/20 hover:text-cyan-200
+                            transition"
+                >
+                  {link.label}
+                </a>
               ))}
             </div>
           )}
