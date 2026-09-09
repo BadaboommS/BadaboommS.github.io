@@ -1,14 +1,5 @@
 import { useState } from "react";
-
-interface Project {
-  id: number | string;
-  title: string;
-  description: string[];
-  stack?: string;
-  img?: { src: string; alt: string }[];
-  links?: { label: string; href: string }[];
-  gallery?: { src: string; alt: string }[];
-}
+import type { Project } from "../constants/projects";
 
 interface ProjectModalProps {
   project: Project;
@@ -91,7 +82,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {project.links.map((link, idx) => (
                 <a
                   key={idx}
-                  href={link.href}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-lg border border-cyan-500/30
