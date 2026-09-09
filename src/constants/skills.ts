@@ -14,16 +14,19 @@ export const skills: SkillCategory[] = [
     items: [
       { name: "ReactJS", img: "../img/react.svg" },
       { name: "VueJs", img: "../img/vue.svg" },
+      { name: "Typescript", img: "../img/TS_Logo.svg" }
+    ],
+  },
+  {
+    name: "Secondary technologies",
+    items: [
       { name: "PrimeVue", img: "../img/primevue-logo.svg" },
       { name: "NodeJS", img: "../img/nodejs-icon.svg" },
-      { name: "Typescript", img: "../img/TS_Logo.svg" },
       { name: "MongoDB", img: "../img/MongoDB.svg" },       
       { name: "TailwindCSS", img: "../img/tailwind.svg" }, 
       { name: "Electron", img: "../img/electron_icon.webp" },    
       { name: "Deck.gl", img: "../img/deckGL_Logo.webp" },
       { name: "Express", img: "../img/expressjs.svg" },
-      { name: "Git / Github", img: "../img/square-github.svg" },
-      { name: "Agile Methods", img: "../img/agile_icon.webp" },
       { name: "Linux", img: "../img/Tux.svg" },
       { name: "REST API", img: "../img/api.svg" },
       { name: "Playwright", img: "../img/playwright-logo.svg" },
