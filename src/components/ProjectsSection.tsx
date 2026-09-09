@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { projects } from "../constants/projects";
-import ProjectModal from "./ProjectModal"; // ton nouveau composant
+import ProjectModal from "./ProjectModal";
 
 export default function ProjectsSection() {
   const [activeModal, setActiveModal] = useState<number | string | null>(null);
